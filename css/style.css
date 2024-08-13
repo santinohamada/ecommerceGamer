@@ -20,6 +20,13 @@ main{
 #logo-navbar{
     width: 150px;
 }
-nav{
+nav, .dropdown-menu{
     background-color: var(--rojito);
+}
+.dropdown-menu a:hover{
+    background-color: var(--rojito);
+    font-weight: bold;
+}
+.search{
+    width: 300px;
 }

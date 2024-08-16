@@ -72,19 +72,8 @@
                     >Soporte</a
                   >
                 </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link navbar-nav"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modal_login"
-                    aria-current="page"
-                    href="#"
-                    >Iniciar Sesion</a
-                  >
-                </li>
               </ul>
             </div>
-
             <div class="d-lg-flex flex-nowrap">
               <div class="search me-3">
                 <form class="d-flex" role="search" data-bs-theme="light">
@@ -99,11 +88,20 @@
                   </button>
                 </form>
               </div>
+              <a
+                class="nav-link navbar-nav"
+                data-bs-toggle="modal"
+                data-bs-target="#modal_login"
+                aria-current="page"
+                href="#"
+                >Iniciar Sesion
+              </a>
             </div>
           </div>
         </div>
       </nav>
     </header>
+    <!--div del modal login-->
     <div
       class="modal fade"
       id="modal_login"
@@ -114,7 +112,9 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="miModalLabel">Ingrese sus datos</h5>
+            <h5 class="modal-title text-light" id="miModalLabel">
+              Inicie Sesion
+            </h5>
             <button
               type="button"
               class="btn-close"
@@ -124,8 +124,14 @@
           </div>
           <div class="modal-body">
             <div class="container-sm" class="img-fluid">
+              <img
+                src="./images/joystickModal.jpg"
+                class="rounded mx-auto d-block me-4 img-fluid"
+                alt="imagen del login"
+                id="modal_body_img"
+              />
               <form>
-                <div class="form-group mb-3">
+                <div class="form-group mb-3 text-light">
                   <label for="email"> Email:</label>
                   <input
                     type="email"
@@ -136,7 +142,7 @@
                     required
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group text-light">
                   <label for="Contraseña">Contraseña:</label>
                   <input
                     type="password"
@@ -148,27 +154,22 @@
                   />
                 </div>
               </form>
-            </div>
-            <div class="container-fluid">
-              <h6 class="text-secondary-emphasis">O inicie sesion con:</h6>
-              <a href="./pages/error404.html" class="me-2 fs-3">
-                <i class="bi bi-google" id="google"></i>
-              </a>
-              <a href="./pages/error404.html" class="fs-3">
-                <i class="bi bi-facebook" id="fb"></i>
+              <a href="#" class="text-secondary-emphasis">
+                Recuperar Contraseña
               </a>
             </div>
           </div>
-          <div class="modal-footer">
-            <a
-              href="./pages/error404.html"
-              class="position-absolute start-0 ms-3 border-primary-subtle text-light"
-            >
-              Recuperar Contraseña
-            </a>
-            <a
-              href="./pages/error404.html"
-              class="rounded-2 p-1 bg-info border-primary-subtle"
+          <div class="modal-footer justify-content-between align-items-start">
+            <div>
+              <h6 class="text-light">O inicie sesion<br />con:</h6>
+              <a href="./pages/Error404.html" class="me-2 fs-3">
+                <i class="bi bi-google" id="google"></i>
+              </a>
+              <a href="./pages/Error404.html" class="fs-3">
+                <i class="bi bi-facebook" id="fb"></i>
+              </a>
+            </div>
+            <a href="#" class="btn text-light" id="btnModalFooter"
               >Iniciar Sesion</a
             >
           </div>

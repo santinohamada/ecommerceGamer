@@ -44,7 +44,7 @@ const opinion1 = {
   puntaje: 4.5,
   fecha: fechaFormateada,
   comentario:
-    "interesante pero no mas interesante q el CULO DE LA MAMA DE HAURANE",
+    "tabueno",
 };
 const opinion2 = {
   id: "123",
@@ -87,7 +87,7 @@ const juegoSeleccionado = listaJuegos.find(
 const div = document.createElement("div");
 function precioJuego(juegoSeleccionado) {
   if (juegoSeleccionado.descuento) {
-    return `<span class="badge fs-5 celesteClarito">-${
+    return `<span class="badge fs-5 celesteClarito me-2">-${
       juegoSeleccionado.cantidadDescuento
     }%</span>
             <span class="text-secondary"><s>${
@@ -199,7 +199,9 @@ main.innerHTML = `
         </article>
         <div class="col-12">
           <h2 class="text-center my-3">Reseñas</h2>
+          <div class="container">
           ${comentarios(juegoSeleccionado)}
+          </div>
           <div class="d-flex justify-content-evenly" id="verMasDetalle">
             <button class="btn btn-outline-success"data-bs-toggle="modal" data-bs-target="#Modal">Añadir una reseña</button>
           </div>
@@ -269,9 +271,10 @@ function comentarios(juegoSeleccionado) {
   let comentarios = ``;
   for (let i = 0; i < juegoSeleccionado.opiniones.length; i++) {
     comentarios += `
+    
     <div class="row">
-              <div class="card mb-3">
-                <div class="col-12 p-0">
+    <div class="card mb-3">
+    <div class="col-12 p-0">
                   <div class="d-flex mt-2 justify-content-between">
                     <div class="d-flex align-items-center">
                       <img src="${juegoSeleccionado.opiniones[i].usuario.foto}"

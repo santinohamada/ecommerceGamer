@@ -99,7 +99,7 @@ h1{
     top:35%;
   }
   .descripcion-imagen-miembros{
-    background-color: rgba(226, 142, 46, 0.5); 
+    background-color: rgba(39, 38, 37, 0.5); 
     padding: 2px;
     border-radius: 10%;
     color: white; 
@@ -108,6 +108,31 @@ h1{
  font-size: 22px;
 }
 
+.div-contenedor-fondo {
+  width: 100%;
+  height: 100%; 
+}
+
+.tamaño-imagen-fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+.div-descripcion-santino{
+ background-image: url(../images/PagNosotros.img/lol.jpeg);
+ display: flex;
+ flex-direction: row;
+}
+.div-descripcion-emilia{
+  background-image: url(../images/PagNosotros.img/gta.jpeg);
+  display: flex;
+  flex-direction: row;
+ }
+ .div-descripcion-elian{
+  background-image: url(../images/PagNosotros.img/dyong.jpeg);
+  display: flex;
+  flex-direction: row;
+ }
 
 @media (max-width: 576px) {
   .tamaño-img-section {
@@ -161,4 +186,8 @@ h1{
       .chakra-petch-light{
         font-size: 18px;
       }
+      .div-descripcion-santino,.div-descripcion-emilia,.div-descripcion-elian{
+        flex-direction: column;
+        align-items: center;
+       }
 }

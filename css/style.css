@@ -32,6 +32,9 @@ nav, .dropdown-menu{
 }
 
 /*inicio estilos del modal login*/
+#google, #fb{
+    text-decoration: none;
+}
 .modal-header{
     background-color: var(--rojito);
 }

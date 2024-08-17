@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
-  <body>
+  <body data-bs-theme="dark">
     <header>
       <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
@@ -176,7 +176,131 @@
         </div>
       </div>
     </div>
-    <main></main>
+    <main>
+      <section></section><!--Aqui ira el carousel-->
+      <section></section><!--Aqui ira Los mas vendidos-->
+      <section></section><!--Ofertas limitadas por tiempo-->
+
+      <section class="container mb-3">
+      
+        <div class="container mt-5">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Catálogo de Juegos</h1>
+            <div class="btn-group">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                id="categoryFilter"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-funnel"></i> Filtrar por categoría
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="categoryFilter">
+                <li><a class="dropdown-item" href="#">Todos</a></li>
+                <li><a class="dropdown-item" href="#">Plataformas</a></li>
+                <li><a class="dropdown-item" href="#">Acción-Aventura</a></li>
+                <li><a class="dropdown-item" href="#">Puzzle</a></li>
+                <li><a class="dropdown-item" href="#">Battle Royale</a></li>
+                <li><a class="dropdown-item" href="#">Sandbox</a></li>
+                <li><a class="dropdown-item" href="#">Shooter</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

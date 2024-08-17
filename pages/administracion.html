@@ -23,7 +23,9 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pagAdmin.css">
   </head>
   <body>
     <header>
@@ -173,7 +175,64 @@
         </div>
       </div>
     </div>
-    <main></main>
+    <main>
+     <article>
+      <h1 class="francois-one-regular ps-5 py-2"> Administrador de Juegos</h1>
+     </article>
+     <section class="container d-flex justify-content-center">
+      <div class=" table-responsive">
+        <table class="table-light table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Foto</th>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Desarrollador</th>
+                    <th>Categoria</th>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="fila-tabla">
+                  <td><img src="../images/PagAdministrador.img/prueba1.jpg" alt="portada del juego" class="imagen-catalogo-juego"></td>
+                    <td>1</td>
+                    <td>Need for Speed Hot Persuit Remasted</td>
+                    <td>Sony</td>
+                    <td>Accion, Carreras</td>
+                    <td>
+                        <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                        <button class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                    </td>
+                </tr>
+                <tr class="fila-tabla">
+                  <td><img src="../images/PagAdministrador.img/prueba2.jpg" alt="portada del juego" class="imagen-catalogo-juego"></td>
+                  <td>2</td>
+                  <td>The Legend of Zelda: Breath of the Wild</td>
+                  <td>Nitendo</td>
+                  <td>Aventura, Accion</td>
+                  <td>
+                      <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                      <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                      <button class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                  </td>
+              </tr>
+              <tr class="fila-tabla">
+                <td><img src="../images/PagAdministrador.img/prueba3.jpg" alt="portada del juego" class="imagen-catalogo-juego"></td>
+                <td>3</td>
+                <td>Fornite</td>
+                <td>Epic Games</td>
+                <td>Battle Royale , Accion</td>
+                <td>
+                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                    <button class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+     </section>
+    </main>
     <footer></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

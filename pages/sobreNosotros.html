@@ -58,7 +58,7 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ul-nav">
                 <li class="nav-item">
                   <a
-                    class="nav-link active"
+                    class="nav-link"
                     aria-current="page"
                     href="./sobreNosotros.html"
                     >Sobre Nosotros</a
@@ -87,145 +87,95 @@
                 </form>
               </div>
 
-              <a class="nav-link navbar-nav" aria-current="page" href="#"
-                >Iniciar Sesion</a
-              >
+              <a
+                class="nav-link navbar-nav"
+                data-bs-toggle="modal"
+                data-bs-target="#modal_login"
+                aria-current="page"
+                href="#"
+                >Iniciar Sesion
+              </a>
             </div>
           </div>
         </div>
       </nav>
     </header>
-    <main class="main-pagina-nosotros">
-      <section>
-        <div class="container-fluid div-contenedor-img">
-          <img
-            class="tamaño-img-section posicion-img-valorant"
-            src="../images/PagNosotros.img/valorant2.jpg"
-            alt="valorant"
-          />
-          <img
-            class="tamaño-img-section posicion-img-fallguys"
-            src="../images/PagNosotros.img/fallGuys.jpeg"
-            alt="fallGuys"
-          />
-          <img
-            class="tamaño-img-section posicion-img-minecraft"
-            src="../images/PagNosotros.img/minecraft.jpeg"
-            alt="minecraft"
-          />
-          <h1 class="titulo-section">DESCUBRE</h1>
-          <h1 class="posicion-titulo-principal2">EL MUNDO</h1>
-          <h1 class="posicion-titulo-principal3">DE LOS VIDEOJUEGOS</h1>
-        </div>
-      </section>
-      <article>
-        <p class="chakra-petch-light px-5 py-4 pt-lg-5">
-          En Nether Shop, entendemos que el universo de los videojuegos es amplio y emocionante, por eso nos dedicamos a seleccionar cuidadosamente una amplia gama de títulos, desde los clásicos que todos aman hasta las últimas novedades que te mantendrán al borde de tu asiento. Nuestra misión es hacer que el acceso a tus juegos favoritos sea sencillo y rápido, ofreciéndote una plataforma segura y confiable para realizar tus compras.
-        </p>
-      </article>
-      <hr>
-      <article class="container">
-        <h2 class="text-center">Nuestros valores</h2>
-        <div class=" row d-flex justify-content-center">
-            <div class=" col-5 col-md-4 col-lg-2 pb-2">
-                <div class="card h-100">
-                    <img src="../images/PagNosotros.img/pasion.jpg" class="card-img-top" alt="minecraft ilustracion">
-                    <div class="card-body">
-                        <h5 class="card-title">Pasion por los Juegos</h5>
-                        <p class="card-text">Entendemos la importancia de ofrecer una experiencia de juego excepcional</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-5 col-md-4 col-lg-2  pb-2">
-                <div class="card h-100">
-                    <img src="../images/PagNosotros.img/comunidad.jpg" class="card-img-top" alt="minecraft ilustracion">
-                    <div class="card-body">
-                        <h5 class="card-title">Comunidad comprometida</h5>
-                        <p class="card-text">Valoramos a nuestra comunidad de jugadores y trabajamos constantemente para mejorar su experiencia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-5 col-md-4 col-lg-2  pb-2">
-                <div class="card h-100">
-                    <img src="../images/PagNosotros.img/innovacion.jpg" class="card-img-top" alt="minecraft ilustracion">
-                    <div class="card-body">
-                        <h5 class="card-title">Innovacion constante</h5>
-                        <p class="card-text">Nos mantenemos actualizados, asegurando que nuestros clientes siempre tengan acceso a lo más novedoso y emocionante.</p> 
-                    </div>
-                </div>
-            </div>
-            <div class="col-5 col-md-4 col-lg-2  pb-2">
-                <div class="card h-100">
-                    <img src="../images/PagNosotros.img/atencionalcliente.jpg" class="card-img-top" alt="ilustacion minecraft">
-                    <div class="card-body">
-                        <h5 class="card-title">Atencion al cliente</h5>
-                        <p class="card-text">Nuestro equipo está siempre dispuesto a ayudar y ofrecer soluciones rápidas y efectivas, asegurando una experiencia de compra sin igual.</p>
-                    </div>
-                </div>
-            </div>
-          <div class="col-5 col-md-4 col-lg-2  pb-2">
-            <div class="card h-100">
-                <img src="../images/PagNosotros.img/integridad.jpg" class="card-img-top" alt="ilustacion minecraft">
-                <div class="card-body">
-                    <h5 class="card-title">Integridad y transparencia</h5>
-                    <p class="card-text">Operamos con honestidad y claridad en todo lo que hacemos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-5 col-md-4 col-lg-2  pb-2">
-          <div class="card h-100">
-              <img src="../images/PagNosotros.img/personalizado.jpg" class="card-img-top" alt="ilustacion minecraft">
-              <div class="card-body">
-                  <h5 class="card-title">Experiencia personalizada</h5>
-                  <p class="card-text">Ofrecemos una experiencia de compra personalizada, adaptando nuestras recomendaciones y servicios </p>
-              </div>
+    <!--div del modal login-->
+    <div
+      class="modal fade"
+      id="modal_login"
+      tabindex="-1"
+      aria-labelledby="miModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-light" id="miModalLabel">
+              Inicie Sesion
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
+          <div class="modal-body">
+            <div class="container-sm" class="img-fluid">
+              <img
+                src="/images/joystickModal.jpg"
+                class="rounded mx-auto d-block me-4 img-fluid"
+                alt="imagen del login"
+                id="modal_body_img"
+              />
+              <form>
+                <div class="form-group mb-3 text-light">
+                  <label for="email"> Email:</label>
+                  <input
+                    type="email"
+                    class="rounded-2"
+                    id="email"
+                    minlength="10"
+                    maxlength="100"
+                    required
+                  />
+                </div>
+                <div class="form-group text-light">
+                  <label for="Contraseña">Contraseña:</label>
+                  <input
+                    type="password"
+                    class="rounded-2"
+                    id="Contraseña"
+                    minlength="8"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+              </form>
+              <a href="#" class="text-secondary-emphasis">
+                Recuperar Contraseña
+              </a>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between align-items-start">
+            <div>
+              <h6 class="text-light">O inicie sesion<br />con:</h6>
+              <a href="./error404.html" class="me-2 fs-3">
+                <i class="bi bi-google" id="google"></i>
+              </a>
+              <a href="./error404.html" class="fs-3">
+                <i class="bi bi-facebook" id="fb"></i>
+              </a>
+            </div>
+            <a href="#" class="btn text-light" id="btnModalFooter"
+              >Iniciar Sesion</a
+            >
+          </div>
+        </div>
       </div>
-          
-        </div>
-    </article>
-     <hr>
-      <section class="container pb-2 contenedor-final">
-        <h2 class="text-center">Conocenos</h2> 
-        <p class="chakra-petch-light px-5">
-          Detrás de GameShop hay un equipo apasionado y dedicado que trabaja
-          incansablemente para brindar la mejor experiencia a nuestros clientes.
-          Conoce a algunos de los miembros clave de nuestro equipo.
-        </p>
-        <div class="container row d-flex justify-content-evenly">
-          <div class="col-12 col-md-5 div-descripcion-santino mb-2">
-            <img class="w-100 foto-miembros" src="../images/PagNosotros.img/santinocanva.png" alt="Foto de miembro del equipo">
-            <div class="d-flex row align-content-center mx-3">
-              <h3 class="descripcion-imagen-miembros text-center nombre-miembro">Santino Hamada</h3>
-              <p class="descripcion-imagen-miembros text-center card-text">Uno de mis juegos preferidos es el League of Leyends, me divierto mucho jugando con amigos o participando en torneos</p>
-            </div>
-          </div>
-          <div class="col-12 col-md-5 div-descripcion-emilia mb-2">
-            <img class="w-100 foto-miembros" src="../images/PagNosotros.img/emiliacanva.png" alt="Foto de miembro del equipo">
-            <div class="d-flex row align-content-center mx-3">
-              <h3 class="descripcion-imagen-miembros text-center nombre-miembro">Emilia Ceballos</h3>
-            <p class="descripcion-imagen-miembros text- card-text">No tengo un juego favorito, soy mas de los clasicos y de los que me pueda divertir con mis amigos</p>
-            </div>
-          </div>
-          <div class="col-12 col-md-5 div-descripcion-elian mb-2">
-            <img class="w-100 foto-miembros" src="../images/PagNosotros.img/helliozcanva.png" alt="Foto de miembro del equipo">
-            <div class="d-flex row align-content-center mx-3">
-             <h3 class="descripcion-imagen-miembros text-center nombre-miembro">Elian Nicolas Miranda</h3>
-             <p class="descripcion-imagen-miembros text-center card-text">Me divierte y paso mucho tiempo jugando Dying Light 2.</p>
-            </div>
-          </div>
-          <div class="col-12 col-md-5 div-descripcion-santino mb-2">
-            <img class="w-100 foto-miembros" src="../images/PagNosotros.img/santinocanva.png" alt="Foto de miembro del equipo">
-            <div class="d-flex row align-content-center mx-3">
-              <h3 class="descripcion-imagen-miembros text-center nombre-miembro">Santino Hamada</h3>
-              <p class="descripcion-imagen-miembros text-center card-text">Uno de mis juegos preferidos es el League of Leyends, me divierto mucho jugando con amigos o participando en torneos</p>
-            </div>
-          </div>
-          
-
-        </div>
-      </section>
-    </main>
+    </div>
+    <main></main>
     <footer></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

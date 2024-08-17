@@ -30,3 +30,31 @@ nav, .dropdown-menu{
 .search{
     width: 300px;
 }
+
+/*inicio estilos del modal login*/
+.modal-header{
+    background-color: var(--rojito);
+}
+.modal-body {
+    background-color: var(--marroncito);
+}
+.modal-footer{
+    background-color: var(--rojito);
+}
+/*inputs del form del modal*/
+.form-group input {
+    width: calc(100% - 5px);
+}
+#btnModalFooter {
+    background-color: var(--marroncito);
+}
+.modal-footer i{
+    color: var(--marroncito);
+}
+/*media quieries del modal login*/
+@media all and (max-width: 460px){
+    #modal_body_img {
+    width: 100%;
+    }
+}
+/*fin de estilos del modal login*/

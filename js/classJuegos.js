@@ -1,5 +1,5 @@
 import { v4 as uid } from "https://jspm.dev/uuid";
-export default class Juego {
+export class Juego {
   //export default se usa solo si exportamos una unica cosa, sino es export
   #id;
   #nombre;
@@ -134,4 +134,35 @@ export default class Juego {
       opiniones: this.opiniones,
     };
   }
+}
+export function crearJuegos() {
+  const listaJuego = JSON.parse(localStorage.getItem("juegosKey")) || [];
+  if (listaJuego.length == 0) {
+    const JuegoNuevo = new Juego(
+      undefined,
+      "Need for Speed™ Hot Pursuit Remastered",
+      69.99,
+      true,
+      90,
+      "Siente la emoción de la persecución y la adrenalina de escapar sobre ruedas con los coches de mayor rendimiento del mundo en Need for Speed™ Hot Pursuit Remastered.",
+      ["Accion", "Carreras"],
+      [
+        "Windows 10,64 Bit",
+        "(AMD) Phenom II X4 965 o equivalente (Intel) Core i3-2120 o equivalente",
+        "DirectX 11",
+        "45 GB",
+      ],
+      [
+        "Windows 10, 64 Bit",
+        "Phenom II X4 965 o equivalente (Intel) Core i3-2120 o equivalente",
+        "DirectX 11",
+        "45 GB",
+      ],
+      "Electronic Arts",
+      "https://image.api.playstation.com/cdn/UP0006/CUSA01925_00/RxeNb9Ph1y2VhBGv5Ct0tuY6f5xC4t9f.png?w=440"
+    );
+    listaJuego.push(JuegoNuevo);
+    localStorage.setItem("juegosKey", JSON.stringify(listaJuego));
+  }
+  return listaJuego;
 }

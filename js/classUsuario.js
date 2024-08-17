@@ -1,6 +1,6 @@
 import { v4 as uid } from "https://jspm.dev/uuid";
 
-export default class Usuario {
+export class Usuario {
   //export default se usa solo si exportamos una unica cosa, sino es export
   #id;
   #nombre;
@@ -76,4 +76,31 @@ export default class Usuario {
       password: this.password,
     };
   }
+}
+export function crearUsuarios() {
+  const listaUsuario = JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  if (listaUsuario.length == 0) {
+    const usuario = new Usuario(
+      undefined,
+      "Elian",
+      "Miranda",
+      "HolaComoEstas",
+      "Elian22",
+      "../images/elianCanva",
+      0
+    );
+    const usuario2 = new Usuario(
+      undefined,
+      "Santino",
+      "Hamada",
+      "santino20",
+      "El ScrumMAster",
+      "../images/santinoCanva",
+      1
+    );
+    listaUsuario.push(usuario);
+    listaUsuario.push(usuario2);
+    localStorage.setItem("usuariosKey", JSON.stringify(listaUsuario));
+  }
+  return listaUsuario;
 }

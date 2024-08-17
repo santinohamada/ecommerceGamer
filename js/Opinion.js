@@ -1,5 +1,4 @@
 import { v4 as uid } from "https://jspm.dev/uuid";
-
 export default class Opiniones {
   //export default se usa solo si exportamos una unica cosa, sino es export
   #id;
@@ -76,5 +75,5 @@ function formatearFecha() {
   let minutos = fecha.getMinutes().toString().padStart(2, "0");
 
   // Formato final
-  return (fechaFormateada = `${dia}/${mes}/${año} ${horas}:${minutos}`);
+  return `${dia}/${mes}/${año} ${horas}:${minutos}`;
 }

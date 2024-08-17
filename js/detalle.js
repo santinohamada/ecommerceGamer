@@ -1,87 +1,18 @@
-import Juego from "./classJuegos.js";
-import { verificarPuntaje } from "./modalComentario.js";
-const listaJuegos = [];
-const listaUsuarios = [];
-const usuario = {
-  id: "123",
-  nombre: "Santino",
-  password: "asd",
-  apellido: "Hamada",
-  nombreUsuario: "MEOWSOTE",
-  foto: "https://media-protected.taiga.io/user/f/9/1/c/ff5c5b3dbe7b936e4ffbb57869e15dd15dcb1dafb1b70f913093d1c15919/fotozoom.jpg.300x300_q85_crop.jpg?token=ZrvYug%3AkX0j5aN7YrzExuy9Rmg4oofeLfZXjbolZTt4BFrpUYcvq657wnTYnzI4d1MWYqe6Q4fQwJzIjDFwpJieXOksQA",
-};
-const usuario2 = {
-  id: "123",
-  nombre: "Octavio",
-  password: "asd",
-  apellido: "Haurigot",
-  nombreUsuario: "MIAUCHITO",
-  foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0KALVgvM2cx9CPNEOwE-j7xdUe_YyWIx2Q&s",
-};
-listaUsuarios.push(usuario);
-listaUsuarios.push(usuario2);
-
-localStorage.setItem("usuariosKey", JSON.stringify(listaUsuarios));
-
-const guardarEnLocalStorage = () => {
-  localStorage.setItem("juegosKey", JSON.stringify(listaJuegos));
-};
-let fecha = new Date();
-
-// Formatear la fecha
-let dia = fecha.getDate().toString().padStart(2, "0");
-let mes = (fecha.getMonth() + 1).toString().padStart(2, "0"); // Los meses comienzan desde 0
-let año = fecha.getFullYear();
-let horas = fecha.getHours().toString().padStart(2, "0");
-let minutos = fecha.getMinutes().toString().padStart(2, "0");
-
-// Formato final
-let fechaFormateada = `${dia}/${mes}/${año} ${horas}:${minutos}`;
-
-const opinion1 = {
-  id: "123",
-  usuario: usuario,
-  puntaje: 4.5,
-  fecha: fechaFormateada,
-  comentario:
-    "tabueno",
-};
-const opinion2 = {
-  id: "123",
-  usuario: usuario2,
-  puntaje: 2,
-  fecha: fechaFormateada,
-  comentario: "ZARPAO EN ABUSO",
-};
-const JuegoNuevo = new Juego(
-  undefined,
-  "Need for Speed™ Hot Pursuit Remastered",
-  69.99,
-  true,
-  90,
-  "Siente la emoción de la persecución y la adrenalina de escapar sobre ruedas con los coches de mayor rendimiento del mundo en Need for Speed™ Hot Pursuit Remastered.",
-  ["Accion", "Carreras"],
-  [
-    "Windows 10,64 Bit",
-    "(AMD) Phenom II X4 965 o equivalente (Intel) Core i3-2120 o equivalente",
-    "DirectX 11",
-    "45 GB",
-  ],
-  [
-    "Windows 10, 64 Bit",
-    "Phenom II X4 965 o equivalente (Intel) Core i3-2120 o equivalente",
-    "DirectX 11",
-    "45 GB",
-  ],
-  "Electronic Arts",
-  "https://image.api.playstation.com/cdn/UP0006/CUSA01925_00/RxeNb9Ph1y2VhBGv5Ct0tuY6f5xC4t9f.png?w=440"
+import { Juego, crearJuegos } from "./classJuegos.js";
+import Opiniones from "./Opinion.js";
+import { crearUsuarios } from "./classUsuario.js";
+import { verificarPuntaje, verificarTexto } from "./modalComentario.js";
+const listaUsuarios = crearUsuarios();
+const listaJuegos = crearJuegos();
+//const paramId = new URLSearchParams(window.location.search).get("usuarioId")
+const usuarioSeleccionado = listaUsuarios.find(
+  (usuario) => usuario.id === listaUsuarios[0].id
 );
-JuegoNuevo.opiniones.push(opinion1, opinion2);
-listaJuegos.push(JuegoNuevo);
-guardarEnLocalStorage();
+//const usuarioSeleccionadoIndex = listaUsuarios.findIndex((usuario)=>usuario.id===paramId)
+
 // const paramId = new URLSearchParams(window.location.search).get("id")
 const juegoSeleccionado = listaJuegos.find(
-  (juego) => juego.id === JuegoNuevo.id
+  (juego) => juego.nombre === "Need for Speed™ Hot Pursuit Remastered"
 );
 
 const div = document.createElement("div");
@@ -110,7 +41,8 @@ function categoriasJuego(juegoSeleccionado) {
 }
 
 const main = document.querySelector("main");
-main.innerHTML = `
+const section = document.createElement("section");
+section.innerHTML = `
 <h1 class="text-start">${juegoSeleccionado.nombre} </h1>
       <div class="d-flex">
         ${estrellasPromedio(juegoSeleccionado.opiniones)}
@@ -202,42 +134,55 @@ main.innerHTML = `
           <div class="container">
           ${comentarios(juegoSeleccionado)}
           </div>
-          <div class="d-flex justify-content-evenly" id="verMasDetalle">
-            <button class="btn btn-outline-success"data-bs-toggle="modal" data-bs-target="#Modal">Añadir una reseña</button>
-          </div>
         </div>
       </section>
 
-
-<!-- Modal -->
-<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="ModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form>
-      <div class="mb-3">
-        <label for="puntaje" class="form-label">Puntaje</label>
-        <input type="number" required class="form-control" id="puntaje" aria-describedby="puntajeHelp">
-        <div class="invalid-feedback">Debe estar entre el 0 y el 5.</div>
-      <div class="mb-3">
-        <label for="comentarioModal" class="form-label">Reseña</label>
-        <textarea type="text" required class="form-control" id="comentarioModal"></textarea>
-      </div>
-      <button class="btn btn-outline-info">Enviar</button>
-    </form>
-      </div>
-    </div>
-  </div>
-</div>
 `;
+main.prepend(section);
 const enviarOpinion = document.querySelector(".btn-outline-info");
 enviarOpinion.addEventListener("click", (e) => {
   e.preventDefault();
-  if (verificarPuntaje(puntaje.value, document.getElementById("puntaje"))) {
+  const puntajeModal = document.querySelector("#puntaje");
+  const opinionModal = document.querySelector("#textoModal");
+  if (
+    verificarPuntaje(puntajeModal.value, puntajeModal) &&
+    verificarTexto(opinionModal.value, opinionModal)
+  ) {
+    let timerInterval;
+    Swal.fire({
+      title: "Se ha enviado tu Reseña!",
+      html: "Esta ventana se cerrará en <b></b> milliseconds.",
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const timer = Swal.getPopup().querySelector("b");
+        timerInterval = setInterval(() => {
+          timer.textContent = `${Swal.getTimerLeft()}`;
+        }, 100);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      location.reload();
+    });
+    const opinion = new Opiniones(
+      undefined,
+      usuarioSeleccionado,
+      puntajeModal.value,
+      undefined,
+      opinionModal.value
+    );
+    juegoSeleccionado.opiniones.push(opinion);
+    localStorage.setItem("juegosKey", JSON.stringify(listaJuegos));
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Hemos detectado un error. Vuelve a intentarlo!",
+    });
   }
 });
 function estrellas(puntaje) {
@@ -258,11 +203,11 @@ function estrellas(puntaje) {
 function estrellasPromedio(opiniones) {
   let puntaje = 0;
   for (let i = 0; i < opiniones.length; i++) {
-    puntaje += opiniones[i].puntaje;
+    puntaje += parseFloat(opiniones[i].puntaje);
   }
   puntaje = puntaje / opiniones.length;
   return `<div>${estrellas(puntaje)} </div> 
-<span class="ms-2 ">${puntaje} </span>`;
+<span class="ms-2 ">${puntaje.toFixed(2)} </span>`;
 }
 function tieneDecimales(num) {
   return num % 1 !== 0;

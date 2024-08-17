@@ -15,8 +15,15 @@
       content="Hamada Santino, Maria Emilia Ceballos, Leandro Lobos, Elian Miranda"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
+"
+      rel="stylesheet"
+    />
     <link rel="icon" href="../images/favicon-32x32.png" type="image/x-icon" />
     <title>Nether Shop</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -106,7 +113,6 @@
       id="modal_login"
       tabindex="-1"
       aria-labelledby="miModalLabel"
-      aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
@@ -142,11 +148,12 @@
                   />
                 </div>
                 <div class="form-group text-light">
-                  <label for="Contraseña">Contraseña:</label>
+                  <label for="pass">Contraseña:</label>
                   <input
+                    autocomplete
                     type="password"
                     class="rounded-2"
-                    id="Contraseña"
+                    id="pass"
                     minlength="8"
                     maxlength="30"
                     required
@@ -161,11 +168,11 @@
           <div class="modal-footer justify-content-between align-items-start">
             <div>
               <h6 class="text-light">O inicie sesion<br />con:</h6>
-              <a href="./error404.html"id="google" class="me-2 fs-3">
-                <i class="bi bi-google" ></i>
+              <a href="./error404.html" id="google" class="me-2 fs-3">
+                <i class="bi bi-google"></i>
               </a>
-              <a href="./error404.html"id="fb" class="fs-3">
-                <i class="bi bi-facebook" ></i>
+              <a href="./error404.html" id="fb" class="fs-3">
+                <i class="bi bi-facebook"></i>
               </a>
             </div>
             <a href="#" class="btn text-light" id="btnModalFooter"
@@ -175,108 +182,80 @@
         </div>
       </div>
     </div>
-    <main class="container my-3 flex-grow-1">
-      <h1 class="text-start">Nombre Del Juego</h1>
-      <div>
-        <img src="../svg/svgexport-3.svg" alt="" class="estrellas img-fluid" />
-        <img src="../svg/svgexport-3.svg" alt="" class="estrellas img-fluid" />
-        <img src="../svg/svgexport-3.svg" alt="" class="estrellas img-fluid" />
-        <img src="../svg/svgexport-3.svg" alt="" class="estrellas img-fluid" />
-        <img src="../svg/svgexport-4.svg" alt="" class="estrellas img-fluid" />
-        <span class="ms-1">4.5</span>
+    <!-- Modal Reseña-->
+    <div
+      class="modal fade"
+      id="ModalOpinion"
+      tabindex="-1"
+      aria-labelledby="ModalOpinionLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalOpinionLabel">
+              Escriba su reseña
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="puntaje" class="form-label">Puntaje</label>
+                <input
+                  type="number"
+                  required
+                  class="form-control"
+                  id="puntaje"
+                  aria-describedby="puntajeHelp"
+                  min="0"
+                  max="5"
+                />
+                <div class="invalid-feedback">
+                  Debe estar entre el 0 y el 5.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="textoModal" class="form-label">Reseña</label>
+                <textarea
+                  minlenght="10"
+                  required
+                  class="form-control"
+                  id="textoModal"
+                ></textarea>
+                <div class="invalid-feedback">
+                  Debe escribir mas de 10 caracteres
+                </div>
+              </div>
+              <button type="submit" class="btn btn-outline-info">Enviar</button>
+            </form>
+          </div>
+        </div>
       </div>
-      <section class="row mt-5">
-        <article class="col-md-7">
-          <div>
-            <img
-              src="https://image.api.playstation.com/cdn/UP0006/CUSA01925_00/RxeNb9Ph1y2VhBGv5Ct0tuY6f5xC4t9f.png?w=440"
-              alt="foto del juego"
-              class="img-fluid w-100"
-            />
-          </div>
-        </article>
-        <div class="col-md-5 mt-5 p-5">
-          <div class="d-flex justify-content-evenly fs-5">
-            <span class="badge fs-5 celesteClarito">-90%</span>
-            <span><s>$69.99</s></span>
-            <span>$6.99</span>
-          </div>
-
-          <div class="text-center my-3 d-flex flex-column">
-            <a href="#" class="btn celesteClarito p-2">Comprar ahora</a>
-            <a href="#" class="btn bg-body-tertiary my-3 p-2"
-              >Añadir al carrito</a
-            >
-            <a href="#" class="btn bg-body-tertiary p-2">Añadir al carrito</a>
-          </div>
-        </div>
-        <div class="mt-3">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
-            fugiat ex inventore assumenda animi eaque quibusdam eos odio
-            repellendus facere fugit tempore adipisci minus quod aliquid
-            molestiae odit unde sapiente architecto, deserunt quos, sint impedit
-            cumque suscipit? Iure voluptates accusamus dolores doloremque, sunt
-            nemo ullam, illum, veritatis aperiam fuga non.
-          </p>
-        </div>
-        <section>
-          <h4 class="text-body-tertiary">Genero</h4>
-          <div class="d-flex">
-            <span class="badge text-bg-secondary me-1">Action</span>
-            <span class="badge text-bg-secondary me-1">Racing</span>
-          </div>
-        </section>
-        <article class="row mt-3">
-          <h2 class="my-3 text-center">Requisitos del juego</h2>
-          <div class="col-6">
-            <h3>Mínimos</h3>
-            <p>
-              <strong>Versión del sistema operativo:</strong> Windows 10, 64 Bit
-            </p>
-            <p>
-              <strong>CPU:</strong> (AMD) Phenom II X4 965 o equivalente (Intel)
-              Core i3-2120 o equivalente
-            </p>
-            <p><strong>Memoria:</strong> 8 GB</p>
-            <p>
-              <strong>GPU:</strong> (AMD) Radeon HD 5870 o equivalente (Nvidia)
-              GeForce GT 640 o equivalente
-            </p>
-            <p><strong>DirectX:</strong> DirectX 11</p>
-            <p><strong>Almacenamiento:</strong> 45 GB</p>
-          </div>
-          <div class="col-6">
-            <h3>Recomendado</h3>
-            <p>
-              <strong>Versión del sistema operativo:</strong> Windows 10, 64 Bit
-            </p>
-            <p>
-              <strong>CPU:</strong> (AMD) Phenom II X4 965 o equivalente (Intel)
-              Core i3-2120 o equivalente
-            </p>
-            <p><strong>Memoria:</strong> 8 GB</p>
-            <p>
-              <strong>GPU:</strong> (AMD) Radeon R9 270x o equivalente (Nvidia)
-              GeForce GTX 660 o equivalente
-            </p>
-            <p><strong>DirectX:</strong> DirectX 11</p>
-            <p><strong>Almacenamiento:</strong> 45 GB</p>
-          </div>
-        </article>
-        <div class="col-12">
-          <h2 class="text-center my-3">Reseñas</h2>
-
-          <article class="container"></article>
-          <div class="d-flex justify-content-evenly" id="verMasDetalle">
-            <a href="#" class="text-center btn btn-outline-info">Ver mas...</a>
-            <button class="btn btn-outline-success">Añadir una reseña</button>
-          </div>
-        </div>
-      </section>
+    </div>
+    <main class="container my-3 flex-grow-1">
+      <article class="container"></article>
+      <div class="d-flex justify-content-evenly" id="verMasDetalle">
+        <button
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalOpinion"
+        >
+          Añadir una reseña
+        </button>
+      </div>
     </main>
     <footer></footer>
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+    "></script>
     <script
+      defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"

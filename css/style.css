@@ -61,3 +61,22 @@ nav, .dropdown-menu{
     }
 }
 /*fin de estilos del modal login*/
+
+/* Estilo de Section 'Mas vendidos' */
+.div-section-vendidos{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+.img-juegos-mas-vendidos{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.img-juegos-mas-vendidos:hover{
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+

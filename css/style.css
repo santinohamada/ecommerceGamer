@@ -32,7 +32,7 @@ nav,
   width: 300px;
 }
 
-/*inicio estilos del modal login*/
+/*modal login*/
 #google,
 #fb {
   text-decoration: none;
@@ -62,7 +62,6 @@ nav,
     width: 100%;
   }
 }
-/*fin de estilos del modal login*/
 
 /*catalogo index*/
 

@@ -177,17 +177,46 @@
       </div>
     </div>
     <main>
-      <section>
-        <hr>
+      <section class="container d-flex flex-column justify-content-center align-content-center align-items-center">
+        <hr />
         <h2>Los mas vendidos</h2>
-        <div class="div-section-vendidos">
-          <img class="img-juegos-mas-vendidos" src="./images/section.img/Boxart_for_Final_Fantasy_VII_Rebirth.png" alt="Juego">
-          <img class="img-juegos-mas-vendidos" src="./images/section.img/Eiyuden_Chronicle_Hundred_Heroes_cover.jpg" alt="Juego">
-          <img class="img-juegos-mas-vendidos" src="./images/section.img/la puerta milenariajpg.jpg" alt="Juego">
-          <img class="img-juegos-mas-vendidos" src="./images/section.img/persona3reloadjpg.jpg" alt="Juego">
-          <img class="img-juegos-mas-vendidos" src="./images/section.img/princeOfPersia.jpg" alt="Juego">
-        </div>
-      </section>
+            <div class="div-section-vendidos">
+              <div class="divImagenesVendidas d-flex justify-content-center">
+  
+                <img
+                  class="img-juegos-mas-vendidos"
+                  src="https://image.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg"
+                  alt="Juego"
+                  data-description="Descripción del primer juego"
+                />
+              </div>
+              <div class="divImagenesVendidas"><img
+                class="img-juegos-mas-vendidos"
+                src="https://image.api.playstation.com/vulcan/ap/rnd/202309/0610/5ac881e0e3f0e361826382f894b4050776079eb18c1692ea.png"
+                alt="Juego"
+                data-description="Descripción del segundo juego"
+              /></div>
+              <div class="divImagenesVendidas"><img
+                class="img-juegos-mas-vendidos"
+                src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/2x1_NSwitch_PaperMarioTheThousandYearDoor_ES_es_image1600w.jpg"
+                alt="Juego"
+                data-description="Descripción del tercer juego"
+              /></div>
+              <div class="divImagenesVendidas"><img
+                class="img-juegos-mas-vendidos"
+                src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg"
+                alt="Juego"
+                data-description="Descripción del cuarto juego"
+              /></div>
+              <div class="divImagenesVendidas"> <img
+                class="img-juegos-mas-vendidos"
+                src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2313/63a2ec52c8fcc222915069ab60e7d19c14009616ecfb053d.jpg"
+                alt="Juego"
+                data-description="Descripción del quinto juego"
+              /></div>
+          </div>
+          <div id="description-box"></div>
+          </section>
     </main>
     <footer></footer>
     <script
@@ -195,5 +224,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/galeria.js"></script>
   </body>
 </html>

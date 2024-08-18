@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
-  <body>
+  <body data-bs-theme="dark">
     <header>
       <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
@@ -177,9 +177,12 @@
       </div>
     </div>
     <main>
-      <section class="container d-flex flex-column justify-content-center align-content-center align-items-center">
+       <section></section><!--Aqui ira el carousel-->
+       <article class="container">
+        <h2 class="px-4 pt-3">Los mas vendidos</h2>
         <hr />
-        <h2>Los mas vendidos</h2>
+       </article>
+      <section class="container d-flex flex-column justify-content-center align-content-center align-items-center">
             <div class="div-section-vendidos">
               <div class="divImagenesVendidas d-flex justify-content-center">
   
@@ -187,36 +190,159 @@
                   class="img-juegos-mas-vendidos"
                   src="https://image.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg"
                   alt="Juego"
-                  data-description="Descripción del primer juego"
+                  data-description="Final Fantasy VII Rebirth es un videojuego de acción RPG a cargo de Square Enix para PlaySation 5 que continúa con la historia de Final Fantasy VII Remake. La travesía desconocida continúa… Tras escapar de la distópica ciudad de Midgar, Cloud y sus amigos se embarcan en un viaje por todo el planeta. Les aguardan nuevas aventuras en vasto y vibrante mundo. Recorre las praderas cubiertas de hierba a lomo de chocobo y explora los extensos ambientes. Combina el pensamiento estratégico con una emocionante acción de combate junto a tus camaradas, incluyendo personajes nuevos añadidos. Profundiza sus relaciones para desatar poderosos combos de equipo."
                 />
               </div>
               <div class="divImagenesVendidas"><img
                 class="img-juegos-mas-vendidos"
                 src="https://image.api.playstation.com/vulcan/ap/rnd/202309/0610/5ac881e0e3f0e361826382f894b4050776079eb18c1692ea.png"
                 alt="Juego"
-                data-description="Descripción del segundo juego"
+                data-description="Eiyuden Chronicle: Hundred Heroes es un RPG a cargo de Rabbit & Bear Studios y 505 Games para PC, PlayStation 4, Xbox One, PlayStation 5, Xbox Series y Switch de los creadores de la saga Suikoden. Un juego diseñado para ofrecer a los jugadores una versión moderna de la clásica experiencia de un JRPG. Prepárate para encarnar a más de 100 personajes jugables en un mundo desgajado por la guerra que solo tú puedes salvar."
               /></div>
               <div class="divImagenesVendidas"><img
                 class="img-juegos-mas-vendidos"
                 src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/2x1_NSwitch_PaperMarioTheThousandYearDoor_ES_es_image1600w.jpg"
                 alt="Juego"
-                data-description="Descripción del tercer juego"
+                data-description="Dobla a Mario en forma de avión para ayudarle a surcar los aires, o plánchalo al máximo para poder pasar por las más estrechas rendijas en tu viaje para rescatar a la pobre Princesa Peach. La acción se desarrolla en un vasto mundo donde tendrás que buscar los Cristales Estrellas y te encontrarás con antiguos amigos... y antiguos enemigos. Paper Mario: La Puerta Milenaria es una aventura RPG a cargo de Nintendo para GameCube y Switch."
               /></div>
               <div class="divImagenesVendidas"><img
                 class="img-juegos-mas-vendidos"
                 src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg"
                 alt="Juego"
-                data-description="Descripción del cuarto juego"
+                data-description="Ponte en la piel de un estudiante transferido empujado a un destino inesperado al entrar en la hora oculta entre un día y el siguiente. Despierta un poder increíble y persigue los misterios de la Hora Oscura, lucha por tus amigos y deja una huella en sus recuerdos para siempre. Persona 3 Reload, un RPG a cargo de Atlus para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series, es una reinvención cautivadora del juego de rol que define el género, renacido para la era moderna."
               /></div>
               <div class="divImagenesVendidas"> <img
                 class="img-juegos-mas-vendidos"
                 src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2313/63a2ec52c8fcc222915069ab60e7d19c14009616ecfb053d.jpg"
                 alt="Juego"
-                data-description="Descripción del quinto juego"
+                data-description="Adéntrate en un atractivo juego de plataformas repleto de acción y aventura. Viaja por la mitología persa y manipula los límites del espacio y el tiempo. Usa tus poderes del tiempo, habilidades de combate y movimientos para ejecutar combos letales y derrotar a criaturas mitológicas y enemigos corrompidos por el tiempo. Compra amuletos a los comerciantes y equípate con ellos para jugar a tu manera."
               /></div>
           </div>
           <div id="description-box"></div>
           </section>
+     
+      <section></section><!--Ofertas limitadas por tiempo-->
+
+      <section class="container mb-3">
+      
+        <div class="container mt-5">
+          <h2>Catálogo de Juegos</h2>
+          <hr>
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="btn-group">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                id="categoryFilter"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-funnel"></i> Filtrar por categoría
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="categoryFilter">
+                <li><a class="dropdown-item" href="#">Todos</a></li>
+                <li><a class="dropdown-item" href="#">Plataformas</a></li>
+                <li><a class="dropdown-item" href="#">Acción-Aventura</a></li>
+                <li><a class="dropdown-item" href="#">Puzzle</a></li>
+                <li><a class="dropdown-item" href="#">Battle Royale</a></li>
+                <li><a class="dropdown-item" href="#">Sandbox</a></li>
+                <li><a class="dropdown-item" href="#">Shooter</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <div class="card cardJuegosCatalogo">
+                <div class="card-body">
+                  <div class="row"></div>
+                  <div class="col text-center">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+                      class="w-100 rounded-1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col"></div>
+                  <h5 class="card-title mt-1">Minecraft</h5>
+                  <p class="card-text text-secondary-emphasis">
+                    El mejor juego del mundo
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <span class="badge bg-secondary">Battle Royale</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
     <script

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 body {
     display: flex;
@@ -9,58 +9,84 @@ body {
 main{
     flex-grow: 1;
 }
-:root { 
---marroncito: #A87D6D; 
---rojito: #8E3336; 
---naranjita: #F5A623; 
---marronOscuro: #2E1A1A; 
---gris: #586F6B; 
+:root {
+  --marroncito: #a87d6d;
+  --rojito: #8e3336;
+  --naranjita: #f5a623;
+  --marronOscuro: #2e1a1a;
+  --gris: #586f6b;
 }
 
-#logo-navbar{
-    width: 150px;
+#logo-navbar {
+  width: 150px;
 }
-nav, .dropdown-menu{
-    background-color: var(--rojito);
+nav,
+.dropdown-menu {
+  background-color: var(--rojito);
 }
-.dropdown-menu a:hover{
-    background-color: var(--rojito);
-    font-weight: bold;
+.dropdown-menu a:hover {
+  background-color: var(--rojito);
+  font-weight: bold;
 }
-.search{
-    width: 300px;
+.search {
+  width: 300px;
 }
 
 /*inicio estilos del modal login*/
-#google, #fb{
-    text-decoration: none;
+#google,
+#fb {
+  text-decoration: none;
 }
-.modal-header{
-    background-color: var(--rojito);
+.modal-header {
+  background-color: var(--rojito);
 }
 .modal-body {
-    background-color: var(--marroncito);
+  background-color: var(--marroncito);
 }
-.modal-footer{
-    background-color: var(--rojito);
+.modal-footer {
+  background-color: var(--rojito);
 }
 /*inputs del form del modal*/
 .form-group input {
-    width: calc(100% - 5px);
+  width: calc(100% - 5px);
 }
 #btnModalFooter {
-    background-color: var(--marroncito);
+  background-color: var(--marroncito);
 }
-.modal-footer i{
-    color: var(--marroncito);
+.modal-footer i {
+  color: var(--marroncito);
 }
 /*media quieries del modal login*/
-@media all and (max-width: 460px){
-    #modal_body_img {
+@media all and (max-width: 460px) {
+  #modal_body_img {
     width: 100%;
-    }
+  }
 }
 /*fin de estilos del modal login*/
+
+/*catalogo index*/
+
+.game-card .badge {
+  align-self: flex-start;
+}
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}
+/* Estilo general de la card */
+.cardJuegosCatalogo {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo al pasar el cursor por encima */
+.cardJuegosCatalogo:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+/*Fin de los estilos del catalogo index*/
+
 
 /* Estilo de Section 'Mas vendidos' */
 .div-section-vendidos{

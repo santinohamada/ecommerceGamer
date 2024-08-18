@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 body {
-  display: flex;
-  font-family: "Roboto", sans-serif;
-  flex-direction: column;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
-main {
-  flex-grow: 1;
+main{
+    flex-grow: 1;
 }
 :root {
   --marroncito: #a87d6d;
@@ -85,3 +85,66 @@ nav,
   cursor: pointer;
 }
 /*Fin de los estilos del catalogo index*/
+
+
+/* Estilo de Section 'Mas vendidos' */
+.div-section-vendidos{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+.divImagenesVendidas{
+    display: flex;
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.img-juegos-mas-vendidos{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.divImagenesVendidas:hover{
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.img-juegos-mas-vendidos:hover{
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+    cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+    .div-section-vendidos{
+        display: flex;
+        width: 300px;
+        height: 286px;
+    }
+    .divImagenesVendidas{
+        display: flex;
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        transition: .5s ease;
+    }
+    .img-juegos-mas-vendidos{
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        transition: .5s ease;
+    }
+    .divImagenesVendidas:hover{
+        width: 180px;
+        opacity: 1;
+        filter: contrast(120%);
+    }
+    .img-juegos-mas-vendidos:hover{
+        width: 180px;
+        opacity: 1;
+        filter: contrast(120%);
+        cursor: pointer;
+    }
+}

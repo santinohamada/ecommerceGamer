@@ -116,7 +116,11 @@ nav,
     opacity: 1;
     filter: contrast(120%);
     cursor: pointer;
-}
+  }
+  #contenedorImagenesCatalogo{
+    height: 200px;
+    width: 200px !important;
+  }
 @media only screen and (max-width: 767px) {
     .div-section-vendidos{
         display: flex;
@@ -146,5 +150,9 @@ nav,
         opacity: 1;
         filter: contrast(120%);
         cursor: pointer;
+    }
+    #contenedorImagenesCatalogo{
+      height: 300px;
+      width: 300px !important;
     }
 }

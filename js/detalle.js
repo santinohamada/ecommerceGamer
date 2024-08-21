@@ -124,7 +124,7 @@ function precioJuego(juegoSeleccionado) {
   }
 }
 section.innerHTML = `
-    <h1 class="text-start">${juegoSeleccionado.nombre} </h1>
+    <h1 class="text-start">${juegoSeleccionado.nombre}</h1>
     <div class="d-flex">
     ${estrellasPromedio(juegoSeleccionado.opiniones)}
     </div>
@@ -147,7 +147,7 @@ section.innerHTML = `
                 <a href="#" class="btn bg-body-tertiary my-3 p-2"
                   >Añadir al carrito</a
                 >
-                <a href="#" class="btn bg-body-tertiary p-2">Añadir al carrito</a>
+                <a href="#" class="btn bg-body-tertiary p-2">Añadir a la lista de deseos</a>
                 </div>
             </div>
             <div class="mt-3">
@@ -156,9 +156,15 @@ section.innerHTML = `
               </p>
             </div>
             <section>
-              <h4 class="text-body-tertiary">Categoria</h4>
+              <h4 class="text-body-secondary">Categoria</h4>
               <div class="d-flex">
                 ${categoriasJuego(juegoSeleccionado)}
+              </div>
+            </section>
+            <section class="mt-3">
+              <h4 class="text-body-secondary">Desarrollador</h4>
+              <div class="d-flex">
+                ${juegoSeleccionado.desarrollador}
               </div>
             </section>
             <article class="row mt-3">

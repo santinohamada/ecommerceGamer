@@ -9,9 +9,11 @@ export class Usuario {
   #password;
   #foto;
   #tipo;
+  #mail;
 
-  constructor(id, nombre, apellido, password, nombreUsuario, foto, tipo) {
+  constructor(id, nombre, apellido,mail, password, nombreUsuario, foto, tipo) {
     this.#id = uid();
+    this.mail = mail;
     this.#password = password;
     this.#nombreUsuario = nombreUsuario;
     this.#nombre = nombre;
@@ -38,6 +40,9 @@ export class Usuario {
   get tipo() {
     return this.#tipo;
   }
+  get mail() {
+    return this.#mail;
+  }
   get password() {
     return this.#password;
   }
@@ -47,6 +52,9 @@ export class Usuario {
   }
   set nombre(value) {
     this.#nombre = value;
+  }
+  set mail(value) {
+    this.#mail = value;
   }
   set apellido(value) {
     this.#apellido = value;
@@ -70,6 +78,7 @@ export class Usuario {
       id: this.id,
       nombre: this.nombre,
       apellido: this.apellido,
+      mail: this.mail,
       nombreUsuario: this.nombreUsuario,
       foto: this.foto,
       tipo: this.tipo,
@@ -78,29 +87,31 @@ export class Usuario {
   }
 }
 export function crearUsuarios() {
-  const listaUsuario = JSON.parse(localStorage.getItem("usuariosKey")) || [];
+  const listaUsuario=[]
   if (listaUsuario.length == 0) {
     const usuario = new Usuario(
       undefined,
-      "Elian",
-      "Miranda",
+      "Maria Emilia",
+      "Ceballos",
+      "emiliaceballos@gmail.com",
       "HolaComoEstas",
-      "Elian22",
-      "../images/elianCanva",
+      "Emilia21",
+      "images/PagNosotros.img/emiliacanva.png",
       0
     );
     const usuario2 = new Usuario(
       undefined,
       "Santino",
       "Hamada",
+      "santinohamada@gmail.com",
       "santino20",
       "El ScrumMAster",
-      "../images/santinoCanva",
+      "images/PagNosotros.img/santinocanva.png",
       1
     );
     listaUsuario.push(usuario);
     listaUsuario.push(usuario2);
-    localStorage.setItem("usuariosKey", JSON.stringify(listaUsuario));
+    localStorage.setItem("usuariosKey", JSON.stringify(([usuario.nombreUsuario,usuario2.nombreUsuario])));
   }
   return listaUsuario;
 }

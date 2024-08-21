@@ -2,12 +2,11 @@ import { Juego, crearJuegos } from "./classJuegos.js";
 import { crearUsuarios } from "./classUsuario.js";
 import Opiniones from "./Opinion.js";
 import { verificarPuntaje, verificarTexto } from "./modalComentario.js";
+import { updateNav } from "./navLogueado.js";
+updateNav()
 const listaUsuarios = crearUsuarios();
 const listaJuegos = crearJuegos();
 const paramJuegoId = new URLSearchParams(window.location.search).get("juegoId");
-const usuarioSeleccionado = listaUsuarios.find(
-  (usuario) => usuario.id === listaUsuarios[0].id
-);
 //const usuarioSeleccionadoIndex = listaUsuarios.findIndex((usuario)=>usuario.id===paramId)
 // const paramId = new URLSearchParams(window.location.search).get("id")
 const juegoSeleccionado = listaJuegos.find(
@@ -283,3 +282,4 @@ enviarOpinion.addEventListener("click", (e) => {
     });
   }
 });
+

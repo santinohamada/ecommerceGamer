@@ -1,42 +1,44 @@
 import { crearUsuarios } from "./classUsuario.js";
-const listaUsuario = crearUsuarios()
-const nav = document.querySelector("nav")
-const modal = document.querySelector(".modal-dialog")
-const container = document.querySelector(".container-sm")
-const p = document.createElement("p")
-p.innerHTML="Usuario y/o contraseña incorrectos"
-export function crearVariables(){
-const email = document.querySelector('#email')
-const pass = document.querySelector('#Contraseña')
-const botonLogIn=document.querySelector('#btnModalFooter')
-    //btnModalFooter
-    const formulario = document.querySelector("#formularioLogIn")
-    botonLogIn.addEventListener('click',(e)=>{
-        loginUser(email.value,pass.value)
-    })
+const listaUsuario = crearUsuarios();
+const nav = document.querySelector("nav");
+const modal = document.querySelector(".modal-dialog");
+const container = document.querySelector(".container-sm");
+const p = document.createElement("p");
+p.innerHTML = "Usuario y/o contraseña incorrectos";
+export function crearVariables() {
+  const email = document.querySelector("#email");
+  const pass = document.querySelector("#Contraseña");
+  const botonLogIn = document.querySelector("#btnModalFooter");
+  //btnModalFooter
+  botonLogIn.addEventListener("click", (e) => {
+    loginUser(email.value, pass.value);
+  });
 }
-function loginUser(mail,password) {
-  const usuarioLogueado =  recorrerUsuarios(mail,password)
-  if(usuarioLogueado !==undefined){
-      sessionStorage.setItem("usuario",JSON.stringify(usuarioLogueado.nombreUsuario))
-    }
-if(window.location.pathname == "./index.html"){
-    updateNavIndex()
-}
-
-else{
-    updateNavPages
-}
+function loginUser(mail, password) {
+  const usuarioLogueado = recorrerUsuarios(mail, password);
+  if (usuarioLogueado !== undefined) {
+    sessionStorage.setItem(
+      "usuario",
+      JSON.stringify(usuarioLogueado.nombreUsuario)
+    );
+  }
+  if (window.location.pathname === "/index.html") {
+    updateNavIndex();
+    location.reload()
+  } else {
+    updateNavPages();
+    location.reload()
+  }
 }
 
 export function updateNavIndex() {
-    console.log("hola")
-    const user = JSON.parse(sessionStorage.getItem("usuario"));
-    console.log(user)
-    const usuarioIniciado = listaUsuario.find((usuario)=>usuario.nombreUsuario === user)
+  const user = JSON.parse(sessionStorage.getItem("usuario"));
+  const usuarioIniciado = listaUsuario.find(
+    (usuario) => usuario.nombreUsuario === user
+  );
 
-    if (user) {
-nav.innerHTML=`<div class="container-fluid">
+  if (user) {
+    nav.innerHTML = `<div class="container-fluid">
           <a class="navbar-brand" href="./index.html">
             <div id="logo-navbar">
               <img
@@ -78,7 +80,8 @@ nav.innerHTML=`<div class="container-fluid">
                     href="./pages/error404.html"
                     >Soporte</a
                   >
-                </li>
+                  </li>
+        ${(li.innerHTML = verificarAdminIndex(usuarioIniciado))}
               </ul>
             </div>
             <div class="d-lg-flex flex-nowrap">
@@ -100,20 +103,19 @@ nav.innerHTML=`<div class="container-fluid">
                 src="${usuarioIniciado.foto} "
             </div>
           </div>
-        </div>`
-    } else {
-        // Si no hay usuario, muestra el botón de iniciar sesión
-
-    }
+        </div>`;
+  } else {
+    // Si no hay usuario, muestra el botón de iniciar sesión
+  }
 }
 export function updateNavPages() {
-    console.log("hola")
-    const user = JSON.parse(sessionStorage.getItem("usuario"));
-    console.log(user)
-    const usuarioIniciado = listaUsuario.find((usuario)=>usuario.nombreUsuario === user)
+  const user = JSON.parse(sessionStorage.getItem("usuario"));
+  const usuarioIniciado = listaUsuario.find(
+    (usuario) => usuario.nombreUsuario === user
+  );
 
-    if (user) {
-nav.innerHTML=`<div class="container-fluid">
+  if (user) {
+    nav.innerHTML = `<div class="container-fluid">
           <a class="navbar-brand" href="../index.html">
             <div id="logo-navbar">
               <img
@@ -156,7 +158,8 @@ nav.innerHTML=`<div class="container-fluid">
                     >Soporte</a
                   >
                 </li>
-              </ul>
+                ${verificarAdminPages(usuarioIniciado)}
+                </ul>
             </div>
             <div class="d-lg-flex flex-nowrap">
               <div class="search me-3">
@@ -177,20 +180,49 @@ nav.innerHTML=`<div class="container-fluid">
                 src="/${usuarioIniciado.foto} "
             </div>
           </div>
-        </div>`
-    } else {
-        // Si no hay usuario, muestra el botón de iniciar sesión
-
+        </div>`;
+  } 
+}
+function recorrerUsuarios(mail, password) {
+  for (let i = 0; i < listaUsuario.length; i++) {
+    if (
+      listaUsuario[i].mail === mail &&
+      listaUsuario[i].password === password
+    ) {
+      return listaUsuario[i];
     }
-}
-function recorrerUsuarios(mail,password) {
-    for(let i = 0; i<listaUsuario.length;i++){
-        if(listaUsuario[i].mail === mail && listaUsuario[i].password===password){
-            return listaUsuario[i]
-        }
-      }
-      container.append(p)
-      return undefined
+  }
+  container.append(p);
+  return undefined;
 }
 
-
+const li = document.createElement("li");
+const navbarUl = document.querySelector("ul");
+function verificarAdminIndex(usuario) {
+  li.classList.add("nav-link");
+  let administracion = ``;
+  if (usuario.tipo === true) {
+    administracion = `
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./pages/administracion.html"
+                    >Administracion</a>`;
+                    return administracion;
+  }
+  return ""
+}
+export function verificarAdminPages(usuario) {
+  li.classList.add("nav-link");
+  let administracion = ``;
+  if (usuario.tipo === true) {
+    administracion = `
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./administracion.html"
+                    >Administracion</a>`;
+                    return administracion;
+  }
+  return ""
+}

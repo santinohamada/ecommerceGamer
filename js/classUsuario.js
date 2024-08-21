@@ -19,6 +19,7 @@ export class Usuario {
     this.#nombre = nombre;
     this.#apellido = apellido;
     this.#foto = foto;
+    this.#tipo = tipo;
   }
 
   // Getters
@@ -97,7 +98,7 @@ export function crearUsuarios() {
       "HolaComoEstas",
       "Emilia21",
       "images/PagNosotros.img/emiliacanva.png",
-      0
+      false
     );
     const usuario2 = new Usuario(
       undefined,
@@ -107,7 +108,7 @@ export function crearUsuarios() {
       "santino20",
       "El ScrumMAster",
       "images/PagNosotros.img/santinocanva.png",
-      1
+      true
     );
     listaUsuario.push(usuario);
     listaUsuario.push(usuario2);

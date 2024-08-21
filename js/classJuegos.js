@@ -292,6 +292,135 @@ const Juego5 = new Juego(
 );
 listaJuego.push(Juego5);
 
+// Valorant
+const Valorant = new Juego(
+  undefined,
+  "Valorant",
+  0.00,
+  true,
+  85,
+  "Disfruta de un shooter táctico en primera persona con personajes únicos y habilidades estratégicas en Valorant.",
+  ["Acción", "Shooter"],
+  [
+    "Windows 7/8/10 (64-bit)",
+    "Intel Core 2 Duo E8400",
+    "4 GB de RAM",
+    "7 GB de espacio disponible",
+  ],
+  [
+    "Windows 7/8/10 (64-bit)",
+    "Intel i3-4150",
+    "4 GB de RAM",
+    "7 GB de espacio disponible",
+  ],
+  "Riot Games",
+  "https://assets.xboxservices.com/assets/36/b5/36b52fa8-e71b-4435-888a-cecb98d3876a.jpg?n=153142244433_GLP-Page-Hero-0_1083x1222_02.jpg"
+);
+listaJuego.push(Valorant);
+
+// Fortnite
+const Fortnite = new Juego(
+  undefined,
+  "Fortnite",
+  0.00,
+  true,
+  80,
+  "Únete a la batalla en Fortnite, un juego de supervivencia y construcción con gráficos vibrantes y una jugabilidad dinámica.",
+  ["Acción", "Battle Royale"],
+  [
+    "Windows 7/8/10 (64-bit)",
+    "Intel Core i3-3225",
+    "4 GB de RAM",
+    "16 GB de espacio disponible",
+  ],
+  [
+    "Windows 10 (64-bit)",
+    "Intel Core i5-7300U",
+    "8 GB de RAM",
+    "20 GB de espacio disponible",
+  ],
+  "Epic Games",
+  "https://image.api.playstation.com/vulcan/ap/rnd/202311/2801/803e41fee0edf8f8ed1de518e6eac60ddf30ac485b9a16a2.png"
+);
+listaJuego.push(Fortnite);
+
+// Counter-Strike 2
+const CounterStrike2 = new Juego(
+  undefined,
+  "Counter-Strike 2",
+  0.00,
+  true,
+  90,
+  "La esperada secuela de Counter-Strike, ofreciendo gráficos mejorados y una jugabilidad pulida en el clásico juego de disparos.",
+  ["Acción", "Shooter"],
+  [
+    "Windows 7/8/10 (64-bit)",
+    "Intel Core 2 Duo E6600",
+    "4 GB de RAM",
+    "15 GB de espacio disponible",
+  ],
+  [
+    "Windows 10 (64-bit)",
+    "Intel Core i5-7500",
+    "6 GB de RAM",
+    "20 GB de espacio disponible",
+  ],
+  "Valve",
+  "https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/social/cs2.jpg"
+);
+listaJuego.push(CounterStrike2);
+// Tetris Effect: Connected
+const TetrisEffect = new Juego(
+  undefined,
+  "Tetris Effect: Connected",
+  39.99,
+  true,
+  95,
+  "Experimenta el clásico Tetris con una nueva perspectiva, acompañado de efectos visuales y sonoros que reaccionan a tu forma de jugar en Tetris Effect: Connected.",
+  ["Puzzle", "Música"],
+  [
+    "Windows 10 (64-bit)",
+    "Intel i3-4340",
+    "4 GB de RAM",
+    "5 GB de espacio disponible",
+  ],
+  [
+    "Windows 10 (64-bit)",
+    "Intel i5-4590",
+    "8 GB de RAM",
+    "5 GB de espacio disponible",
+  ],
+  "Enhance Games",
+  "https://image.api.playstation.com/vulcan/ap/rnd/202301/2006/KjVYStE0uxgsVNvSqSCjwVKE.jpg"
+);
+listaJuego.push(TetrisEffect);
+
+// PUBG
+const PUBG = new Juego(
+  undefined,
+  "PUBG: Battlegrounds",
+  29.99,
+  false, // Valor de cuarto parámetro es false
+  85,
+  "Lucha por sobrevivir en el inmenso mapa de PUBG, un juego de Battle Royale con una gran variedad de armas y vehículos.",
+  ["Acción", "Battle Royale"],
+  [
+    "Windows 7/8/10 (64-bit)",
+    "Intel Core i5-4430",
+    "8 GB de RAM",
+    "30 GB de espacio disponible",
+  ],
+  [
+    "Windows 10 (64-bit)",
+    "Intel Core i7-7700",
+    "16 GB de RAM",
+    "30 GB de espacio disponible",
+  ],
+  "PUBG Corporation",
+  "https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1e9a7.jpg"
+);
+listaJuego.push(PUBG);
+
 localStorage.setItem("juegosKey", JSON.stringify(listaJuego));
 
   }

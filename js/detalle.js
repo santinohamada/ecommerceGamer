@@ -218,6 +218,15 @@ section.innerHTML = `
               ${comentarios(juegoSeleccionado)}
               </div>
             </div>
+            <div class="d-flex justify-content-evenly" id="verMasDetalle">
+        <button
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalOpinion"
+        >
+          Añadir una reseña
+        </button>
+      </div>
           </section>
           
     `;

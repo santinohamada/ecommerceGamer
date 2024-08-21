@@ -6,4 +6,4 @@ crearJuegos()
 crearUsuarios()
 const listaJuego = JSON.parse(localStorage.getItem("juegosKey")) || [];
 rellenarGaleria()
-rellenarSection(listaJuego)
+rellenarSection()

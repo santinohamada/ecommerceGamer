@@ -296,7 +296,7 @@ listaJuego.push(Juego5);
 const Valorant = new Juego(
   undefined,
   "Valorant",
-  0.00,
+  53.22,
   true,
   85,
   "Disfruta de un shooter táctico en primera persona con personajes únicos y habilidades estratégicas en Valorant.",
@@ -322,7 +322,7 @@ listaJuego.push(Valorant);
 const Fortnite = new Juego(
   undefined,
   "Fortnite",
-  0.00,
+  26.99,
   true,
   80,
   "Únete a la batalla en Fortnite, un juego de supervivencia y construcción con gráficos vibrantes y una jugabilidad dinámica.",
@@ -348,7 +348,7 @@ listaJuego.push(Fortnite);
 const CounterStrike2 = new Juego(
   undefined,
   "Counter-Strike 2",
-  0.00,
+  49.36,
   true,
   90,
   "La esperada secuela de Counter-Strike, ofreciendo gráficos mejorados y una jugabilidad pulida en el clásico juego de disparos.",

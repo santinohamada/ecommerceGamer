@@ -64,6 +64,7 @@ nav,
     width: 100%;
   }
 }
+/*fin modal login
 
 /*catalogo index*/
 
@@ -161,4 +162,27 @@ nav,
       height: 300px;
       width: 300px !important;
     }
+}
+
+/*carousel*/
+/*aplica una animacion al pasar los sliders*/
+.carousel-item img {
+  animation: fadeInImage 1s ease-in-out forwards;
+}
+/*aplica una animacion al aparecer el h5 y el p*/
+.carousel-caption h5, 
+.carousel-caption p {
+  opacity: 0;
+  animation: fadeInText .5s ease-in-out forwards;
+  animation-delay: .5s;
+}
+/*modifica parametros de la animacion para que la imagen aparezca luego de un tiempo*/
+@keyframes fadeInImage {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+/*modifica parametros de la animacion para que el h5 y p aparezcan desde abajo luego de un tiempo*/
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

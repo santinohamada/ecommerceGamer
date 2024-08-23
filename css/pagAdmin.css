@@ -5,12 +5,8 @@ body {
   font-family: "Roboto", sans-serif;
   flex-direction: column;
 }
-main {
-  flex-grow: 1;
-  background-color: black;
-}
-article {
-  background-color: #f5a623;
+article{
+    background-color: #F5A623;;
 }
 .francois-one-regular {
   font-family: "Francois One", sans-serif;
@@ -20,6 +16,7 @@ article {
 table {
   background-color: beige;
 }
+
 .imagen-catalogo-juego {
   height: 100px;
   width: 100px;

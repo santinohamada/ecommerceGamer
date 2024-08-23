@@ -21,13 +21,13 @@ function loginUser(mail, password) {
       "usuario",
       JSON.stringify(usuarioLogueado.nombreUsuario)
     );
-  }
-  if (window.location.pathname === "/index.html") {
-    updateNavIndex();
-    location.reload()
-  } else {
-    updateNavPages();
-    location.reload()
+    if (window.location.pathname === "/index.html") {
+      updateNavIndex();
+      location.reload()
+    } else {
+      updateNavPages();
+      location.reload()
+    }
   }
 }
 

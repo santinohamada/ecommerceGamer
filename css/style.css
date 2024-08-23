@@ -128,6 +128,12 @@ nav,
     width: 48px;
     height: 48px;
   }
+  #boton-error404, #boton-error404:active, #boton-error404:visited{
+    background-color: #8e3336;
+  color: white;
+  text-decoration: none;
+  border: none;
+  }
 @media only screen and (max-width: 767px) {
     .div-section-vendidos{
         display: flex;

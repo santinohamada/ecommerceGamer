@@ -2,49 +2,80 @@ import { v4 as uid } from "https://jspm.dev/uuid";
 export class Juego {
   //export default se usa solo si exportamos una unica cosa, sino es export
   #id;
+  #foto;
   #nombre;
   #precio;
   #descuento;
-  #cantidadDescuento;
+  #desarrollador;
   #categoria;
   #descripcion;
-  #requisitosRecomendados;
-  #requisitosMinimos;
-  #desarrollador;
-  #foto;
+  #versionM;
+  #cpuM;
+  #memoriaM;
+  #gpuM;
+  #directxM;
+  #almacenamientoM;
+  #versionR;
+  #cpuR;
+  #memoriaR;
+  #gpuR;
+  #directxR;
+  #almacenamientoR;
+  
   #opiniones;
 
   constructor(
     id,
+    foto,
     nombre,
     precio,
     descuento,
-    cantidadDescuento,
     descripcion,
     categoria,
-    requisitosMinimos,
-    requisitosRecomendados,
     desarrollador,
-    foto,
+    versionM,
+    cpuM,
+    memoriaM,
+    gpuM,
+    directxM,
+    almacenamientoM,
+    versionR,
+    cpuR,
+    memoriaR,
+    gpuR,
+    directxR,
+    almacenamientoR,
     opiniones = []
   ) {
     this.#id = uid();
+    this.#foto = foto;
     this.#categoria = categoria;
     this.#nombre = nombre;
     this.#precio = precio;
     this.#descuento = descuento;
-    this.#cantidadDescuento = cantidadDescuento;
-    this.#descripcion = descripcion;
-    this.#requisitosMinimos = requisitosMinimos;
-    this.#requisitosRecomendados = requisitosRecomendados;
     this.#desarrollador = desarrollador;
-    this.#foto = foto;
+    this.#descripcion = descripcion;
+    this.#versionM = versionM;
+    this.#cpuM = cpuM;
+    this.#memoriaM = memoriaM;
+    this.#gpuM = gpuM;
+    this.#directxM = directxM;
+    this.#almacenamientoM = almacenamientoM;
+    this.#versionR = versionR;
+    this.#cpuR = cpuR;
+    this.#memoriaR = memoriaR;
+    this.#gpuR = gpuR;
+    this.#directxR = directxR;
+    this.#almacenamientoR = almacenamientoR;
     this.#opiniones = opiniones;
   }
 
   // Getters
   get id() {
     return this.#id;
+  }
+  get foto (){
+    return this.#foto
   }
   get nombre() {
     return this.#nombre;
@@ -61,27 +92,66 @@ export class Juego {
   get descuento() {
     return this.#descuento;
   }
-  get cantidadDescuento() {
-    return this.#cantidadDescuento;
-  }
-  get requisitosMinimos() {
-    return this.#requisitosMinimos;
-  }
-  get requisitosRecomendados() {
-    return this.#requisitosRecomendados;
-  }
   get desarrollador() {
     return this.#desarrollador;
   }
-  get foto() {
-    return this.#foto;
+  get versionM() {
+    return this.#versionM;
   }
+  
+  get cpuM() {
+    return this.#cpuM;
+  }
+  
+  get memoriaM() {
+    return this.#memoriaM;
+  }
+  
+  get gpuM() {
+    return this.#gpuM;
+  }
+  
+  get directxM() {
+    return this.#directxM;
+  }
+  
+  get almacenamientoM() {
+    return this.#almacenamientoM;
+  }
+  
+  get versionR() {
+    return this.#versionR;
+  }
+  
+  get cpuR() {
+    return this.#cpuR;
+  }
+  
+  get memoriaR() {
+    return this.#memoriaR;
+  }
+  
+  get gpuR() {
+    return this.#gpuR;
+  }
+  
+  get directxR() {
+    return this.#directxR;
+  }
+  
+  get almacenamientoR() {
+    return this.#almacenamientoR;
+  }
+  
   get opiniones() {
     return this.#opiniones;
   }
   // Setters
   set id(value) {
     this.#id = value;
+  }
+  set foto(value){
+    this.#foto = value;
   }
   set nombre(value) {
     this.#nombre = value;
@@ -98,21 +168,57 @@ export class Juego {
   set descuento(value) {
     return this.#descuento;
   }
-  set cantidadDescuento(value) {
-    return this.#cantidadDescuento;
-  }
-  set requisitosMinimos(value) {
-    this.#requisitosMinimos = value;
-  }
-  set requisitosRecomendados(value) {
-    this.#requisitosRecomendados = value;
-  }
   set desarrollador(value) {
     this.#desarrollador = value;
   }
-  set foto(value) {
-    this.#foto = value;
+  set versionM(value) {
+    this.#versionM = value;
   }
+  
+  set cpuM(value) {
+    this.#cpuM = value;
+  }
+  
+  set memoriaM(value) {
+    this.#memoriaM = value;
+  }
+  
+  set gpuM(value) {
+    this.#gpuM = value;
+  }
+  
+  set directxM(value) {
+    this.#directxM = value;
+  }
+  
+  set almacenamientoM(value) {
+    this.#almacenamientoM = value;
+  }
+  
+  set versionR(value) {
+    this.#versionR = value;
+  }
+  
+  set cpuR(value) {
+    this.#cpuR = value;
+  }
+  
+  set memoriaR(value) {
+    this.#memoriaR = value;
+  }
+  
+  set gpuR(value) {
+    this.#gpuR = value;
+  }
+  
+  set directxR(value) {
+    this.#directxR = value;
+  }
+  
+  set almacenamientoR(value) {
+    this.#almacenamientoR = value;
+  }
+  
   set opiniones(value) {
     this.#opiniones = value;
   }
@@ -121,16 +227,25 @@ export class Juego {
   toJSON() {
     return {
       id: this.id,
+      foto: this.foto,
       nombre: this.nombre,
       precio: this.precio,
       descuento: this.descuento,
       cantidadDescuento: this.cantidadDescuento,
       categoria: this.categoria,
       descripcion: this.descripcion,
-      requisitosMinimos: this.requisitosMinimos,
-      requisitosRecomendados: this.requisitosRecomendados,
       desarrollador: this.desarrollador,
-      foto: this.foto,
+      versionM: this.versionM,
+      cpuM: this.cpuM,
+      memoriaM: this.memoriaM,
+      gpuM: this.gpuM,
+      directxM: this.directxM,
+      almacenamientoM: this.almacenamientoM,
+      versionR: this.versionR,
+      cpuR: this.cpuR,
+      memoriaR: this.memoriaR,
+      gpuR: this.gpuR,
+      directxR: this.directxR,
       opiniones: this.opiniones,
     };
   }

@@ -1,5 +1,6 @@
 import { crearUsuarios } from "./classUsuario.js";
-import { updateNavPages,verificarAdminPages } from "./navLogueado.js"
+import { crearVariables, updateNavPages,verificarAdminPages } from "./navLogueado.js"
+crearVariables()
 updateNavPages()
 const listaUsuario=crearUsuarios()
 const main = document.querySelector("main")

@@ -287,7 +287,7 @@
       </section>
       <!-- MODAL agregar juego -->
       <div
-        class="modal fade"
+        class="modal fade  modal-xl"
         id="modalJuego"
         tabindex="-1"
         aria-labelledby="modalJuegoLabel"
@@ -305,29 +305,31 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form action="">
-                <div class="mb-3">
-                  <label for="foto" class="form-label">Foto</label>
+              <form action="" class="row container d-flex justify-content-center">
+                <div class="mb-3 col-12 col-md-5">
+                  <label for="foto" class="form-label">Foto*</label>
                   <input
                     class="form-control"
                     id="foto"
                     type="text"
                     minlength="3"
                     maxlength="100"
+                    required
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="titulo" class="form-label">Titulo</label>
+                <div class="mb-3 col-12 col-md-7">
+                  <label for="titulo" class="form-label">Titulo*</label>
                   <input
                     class="form-control"
                     id="titulo"
                     type="text"
                     minlength="2"
                     maxlength="80"
+                    required
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="precio" class="form-label">Precio</label>
+                <div class="mb-3 col-6 col-md-2">
+                  <label for="precio" class="form-label">Precio*</label>
                   <input
                     class="form-control"
                     id="precio"
@@ -336,41 +338,18 @@
                     maxlength="9"
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-6 col-md-2">
                   <label for="descuento" class="form-label">Descuento</label>
                   <input
                     class="form-control"
                     id="descuento"
                     type="number"
-                    minlength="1"
                     maxlength="9"
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="descripcion" class="form-label"
-                    >Descripcion</label
-                  >
-                  <input
-                    class="form-control"
-                    id="descripcion"
-                    type="text"
-                    minlength="3"
-                    maxlength="500"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="categoria" class="form-label">Categoria</label>
-                  <input
-                    class="form-control"
-                    id="categoria"
-                    type="text"
-                    minlength="3"
-                    maxlength="300"
-                  />
-                </div>
-                <div class="mb-3">
+                <div class="mb-3 col-12 col-md-8">
                   <label for="desarrollador" class="form-label"
-                    >Desarrollador</label
+                    >Desarrollador*</label
                   >
                   <input
                     class="form-control"
@@ -378,132 +357,193 @@
                     type="text"
                     minlength="3"
                     maxlength="800"
-                  />
-                </div>
-                <h3>Requisitos del juego</h3>
-                <h4>Requisitos minimos</h4>
-                <div class="mb-3">
-                  <label for="versionM" class="form-label">Version del sistema operativo</label>
-                  <input
-                    class="form-control"
-                    id="versionM"
-                    type="text"
-                    minlength="3"
-                    maxlength="30"
+                    required
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="cpuM" class="form-label">CPU</label>
-                  <input
-                    class="form-control"
-                    id="cpuM"
-                    type="text"
-                    minlength="3"
-                    maxlength="30"
-                  />
+                  <label for="descripcion" class="form-label"
+                    >Descripcion*</label
+                  >
+                  <textarea class="form-control"
+                  id="descripcion"
+                  type="text"
+                  minlength="3"
+                  maxlength="500"></textarea>
                 </div>
-                <div class="mb-3">
-                  <label for="memoriaM" class="form-label">Memoria</label>
-                  <input
-                    class="form-control"
-                    id="memoriaM"
-                    type="text"
-                    minlength="3"
-                    maxlength="8"
-                  />
+                <div class="mb-3 row">
+                  <label for="categoria" class="form-label">Categoria/s</label>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="categoria-accion">
+                      <label class="form-check-label" for="categoria-accion">
+                        Acción
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="categoria-rpg" >
+                      <label class="form-check-label" for="categoria-rpg">
+                        RPG
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="categoria-puzzle">
+                      <label class="form-check-label" for="categoria-puzzle">
+                        Puzzle
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="categoria-battleroyale">
+                      <label class="form-check-label" for="categoria-battleroyale">
+                        Battle Royale
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="categoria-carreras">
+                      <label class="form-check-label" for="categoria-carreras">
+                        Carreras
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="categoria-shooter">
+                      <label class="form-check-label" for="categoria-shooter">
+                        Shooter
+                      </label>
+                    </div>
+                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="gpuM" class="form-label">GPU</label>
-                  <input
-                    class="form-control"
-                    id="gpuM"
-                    type="text"
-                    minlength="3"
-                    maxlength="20"
-                  />
+                <h3 class="text-center">Requisitos del juego</h3>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Minimos</h4>
+                  <div class="mb-3">
+                    <label for="versionM" class="form-label">Version del sistema operativo*
+                    </label>
+                    <input
+                      class="form-control"
+                      id="versionM"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuM" class="form-label">CPU*</label>
+                    <input
+                      class="form-control"
+                      id="cpuM"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaM" class="form-label">Memoria*</label>
+                    <input
+                      class="form-control"
+                      id="memoriaM"
+                      type="text"
+                      minlength="3"
+                      maxlength="8"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuM" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuM"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxM" class="form-label">DirectX*</label>
+                    <input
+                      class="form-control"
+                      id="directxM"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoM" class="form-label">Almacenamiento*</label>
+                    <input
+                      class="form-control"
+                      id="almacenamientoM"
+                      type="text"
+                      minlength="3"
+                      maxlength="10"
+                    />
+                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="directxM" class="form-label">DirectX</label>
-                  <input
-                    class="form-control"
-                    id="directxM"
-                    type="text"
-                    minlength="3"
-                    maxlength="15"
-                  />
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Recomendados</h4>
+                  <div class="mb-3">
+                    <label for="versionR" class="form-label">Version del sistema operativo*</label>
+                    <input
+                      class="form-control"
+                      id="versionR"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuR" class="form-label">CPU*</label>
+                    <input
+                      class="form-control"
+                      id="cpuR"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaR" class="form-label">Memoria*</label>
+                    <input
+                      class="form-control"
+                      id="memoriaR"
+                      type="text"
+                      minlength="3"
+                      maxlength="8"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuR" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuR"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxR" class="form-label">DirectX*</label>
+                    <input
+                      class="form-control"
+                      id="directxR"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoR" class="form-label">Almacenamiento*</label>
+                    <input
+                      class="form-control"
+                      id="almacenamientoR"
+                      type="text"
+                      minlength="3"
+                      maxlength="10"
+                    />
+                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="almacenamientoM" class="form-label">Almacenamiento</label>
-                  <input
-                    class="form-control"
-                    id="almacenamientoM"
-                    type="text"
-                    minlength="3"
-                    maxlength="10"
-                  />
-                </div>
-                <h4>Requisitos recomendados</h4>
-                <div class="mb-3">
-                  <label for="versionR" class="form-label">Version del sistema operativo</label>
-                  <input
-                    class="form-control"
-                    id="versionR"
-                    type="text"
-                    minlength="3"
-                    maxlength="30"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="cpuR" class="form-label">CPU</label>
-                  <input
-                    class="form-control"
-                    id="cpuR"
-                    type="text"
-                    minlength="3"
-                    maxlength="30"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="memoriaR" class="form-label">Memoria</label>
-                  <input
-                    class="form-control"
-                    id="memoriaR"
-                    type="text"
-                    minlength="3"
-                    maxlength="8"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="gpuR" class="form-label">GPU</label>
-                  <input
-                    class="form-control"
-                    id="gpuR"
-                    type="text"
-                    minlength="3"
-                    maxlength="20"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="directxR" class="form-label">DirectX</label>
-                  <input
-                    class="form-control"
-                    id="directxR"
-                    type="text"
-                    minlength="3"
-                    maxlength="15"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="almacenamientoR" class="form-label">Almacenamiento</label>
-                  <input
-                    class="form-control"
-                    id="almacenamientoR"
-                    type="text"
-                    minlength="3"
-                    maxlength="10"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary w-25">Enviar</button>
               </form>
             </div>
           </div>

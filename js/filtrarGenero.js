@@ -4,7 +4,7 @@ const listaJuego = JSON.parse(localStorage.getItem("juegosKey")) || [];
 const main = document.querySelector("main");
 
 window.redireccionar = (idJuego) => {
-  window.location.href = "/pages/detalle.html?juegoId=" + idJuego;
+  window.location.href = "../pages/detalle.html?juegoId=" + idJuego;
 };
 
 const sectionFiltro = document.querySelector("#rellenarSection");

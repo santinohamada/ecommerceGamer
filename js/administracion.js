@@ -119,6 +119,7 @@ const crearJuego = (e) => {
   listaJuegos.push(nuevoJuego);
   limpiarFormulario();
   guardarEnLocalStorage();
+  cargaTablaJuegos()
 };
 const limpiarFormulario = () => {
   formAgregarJuego.reset();
@@ -158,6 +159,7 @@ window.editarJuego = (idJuego) => {
   botonConfirmarEditar.addEventListener("click", () => {
     actualizarValoresJuegos(juegoIndex);
   });
+  cargaTablaJuegos()
 };
 const botonConfirmarEditar = document.querySelector("#confirmarEditar");
 function actualizarValoresJuegos(juegoIndex) {
@@ -209,7 +211,7 @@ const dibujarFila = (juego) => {
                   data-bs-target="#modalEditarJuego">
                     <i class="bi bi-pencil-square"></i>
                   </button>
-                  <button class="btn btn-danger">
+                  <button class="btn btn-danger" onclick="borrarJuego('${juego.id}')">
                     <i class="bi bi-trash"></i>
                   </button>
                   <button class="btn btn-primary" onclick="redireccionar('${juego.id}')">
@@ -217,7 +219,33 @@ const dibujarFila = (juego) => {
                   </button>
                 </td>
               </tr>`;
-};
+};window.borrarJuego = (id) => {
+    Swal.fire({
+        title: "¿Estas seguro de borrar el juego?",
+        text: "No puedes revertir posteriormente este proceso",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#8E3336",
+        cancelButtonColor: " #586F6B",
+        confirmButtonText: "Borrar",
+        cancelButtonText: "Cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+            const posicionJuego = listaJuegos.findIndex((juego)=>juego.id === id);
+            listaJuegos.splice(posicionJuego,1);
+            guardarEnLocalStorage();
+            tbody.removeChild(tbody.children[posicionJuego]);
+
+          Swal.fire({
+            title: "Juego borrado",
+            text: "El juego seleccionado ha sido borrado",
+            icon: "success"
+          });
+        }
+      });
+}
+
 
 // manejadores de eventos
 botonAgregarJuego.addEventListener("click", mostrarModal);

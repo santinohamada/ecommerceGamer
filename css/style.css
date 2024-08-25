@@ -33,7 +33,15 @@ nav,
 .search {
   width: 300px;
 }
-
+.a-footer{
+  text-decoration: none;
+}
+.rojito{
+  background-color: var(--rojito);
+}
+.naranjita{
+  background-color: var(--naranjita);
+}
 /*modal login*/
 #google,
 #fb {

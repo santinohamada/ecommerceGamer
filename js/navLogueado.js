@@ -177,7 +177,7 @@ export function updateNavPages() {
               </div>
               <img
                 class="nav-fotoUsuario rounded-5"
-                src="/${usuarioIniciado.foto} "
+                src="../${usuarioIniciado.foto} "
             </div>
           </div>
         </div>`;

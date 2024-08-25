@@ -65,6 +65,7 @@ const foto = document.querySelector("#foto"),
   };
   const crearJuego = (e) => {
     e.preventDefault();
+    categoriasSeleccionadas.length = 0;
     document.querySelectorAll('.form-check-input').forEach((checkbox) => {
         if (checkbox.checked) {
           categoriasSeleccionadas.push(checkbox.nextElementSibling.textContent.trim());
@@ -78,7 +79,7 @@ const foto = document.querySelector("#foto"),
         precio.value,
         descuento.value,
         descripcion.value,
-        categoriasSeleccionadas,
+        [...categoriasSeleccionadas],
         desarrollador.value,
         versionM.value,
         cpuM.value,
@@ -106,9 +107,42 @@ const guardarEnLocalStorage = () => {
     localStorage.setItem('juegosKey',JSON.stringify(listaJuegos));
   
   }
+const cargaTablaJuegos = () => {
+    if (listaJuegos.length !== 0){
+        listaJuegos.map(juego =>dibujarFila(juego));
+    }
+}
+const dibujarFila = (juego) => {
+    tbody.innerHTML += `<tr class="fila-tabla">
+                <td>
+                  <img
+                    src="${juego.foto}"
+                    alt="portada del juego"
+                    class="imagen-catalogo-juego"
+                  />
+                </td>
+                <td>${juego.id}</td>
+                <td>${juego.nombre}</td>
+                <td>${juego.desarrollador}</td>
+                <td>${juego.categoria}</td>
+                <td>
+                  <button class="btn btn-warning">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <button class="btn btn-primary">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </td>
+              </tr>`
+}
+
   
   // manejadores de eventos
  botonAgregarJuego.addEventListener('click',mostrarModal);
  formAgregarJuego.addEventListener("submit",crearJuego)
+ cargaTablaJuegos();
 
 

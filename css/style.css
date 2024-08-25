@@ -192,7 +192,6 @@ nav,
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @media only screen and (max-width: 529px){
   /*contenedor del form de busqueda y boton de filtrado*/
   .formyFiltrado{
@@ -203,6 +202,10 @@ nav,
   .formBuscar{
     margin-bottom: 10px;
   }
+}
+/*boton para limpiar el input*/
+#botonLimpiar{
+  background-color: #ffffff;
 }
 
 

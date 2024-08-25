@@ -2,10 +2,10 @@ import { Juego, crearJuegos } from "./classJuegos.js";
 import { crearUsuarios } from "./classUsuario.js";
 import Opiniones from "./Opinion.js";
 import { verificarPuntaje, verificarTexto } from "./modalComentario.js";
-import { updateNavPages,crearVariables } from "./navLogueado.js";
-crearVariables()
-updateNavPages()
-const listaUsuario=crearUsuarios()
+import { updateNavPages, crearVariables } from "./navLogueado.js";
+crearVariables();
+updateNavPages();
+const listaUsuario = crearUsuarios();
 const user = JSON.parse(sessionStorage.getItem("usuario"));
 const usuarioSeleccionado = listaUsuario.find(
   (usuario) => usuario.nombreUsuario === user
@@ -42,12 +42,11 @@ function estrellasPromedio(opiniones) {
     puntaje += parseFloat(opiniones[i].puntaje);
   }
   puntaje = puntaje / opiniones.length;
-  if(puntaje !== undefined && puntaje !==null && !(isNaN(puntaje))){
-    
+  if (puntaje !== undefined && puntaje !== null && !isNaN(puntaje)) {
     return `<div>${estrellas(puntaje)} </div> 
     <span class="ms-2 ">${puntaje.toFixed(2)} </span>`;
   }
-  return `Sin puntaje`
+  return `Sin puntaje`;
 }
 
 function tieneDecimales(num) {
@@ -94,9 +93,7 @@ function comentarios(juegoSeleccionado) {
     <div class="col-12 d-flex justify-content-between"></div>
     <div class="col-12">
     <div class="card-body">
-    <h6 class="card-text">${
-      juegoSeleccionado.opiniones[i].comentario
-    }</h6>
+    <h6 class="card-text">${juegoSeleccionado.opiniones[i].comentario}</h6>
     <p class="text-secondary">
     ${juegoSeleccionado.opiniones[i].fecha}
     </p>
@@ -112,22 +109,23 @@ function comentarios(juegoSeleccionado) {
 }
 
 function precioJuego(juegoSeleccionado) {
-  if (juegoSeleccionado.descuento!="" || juegoSeleccionado.descuento !==0) {
+  if (juegoSeleccionado.descuento != "" || juegoSeleccionado.descuento !== 0) {
     return `<span class="badge fs-5 celesteClarito me-2">-${
       juegoSeleccionado.descuento
     }%</span>
-            <span class="text-secondary"><s>${
-              (juegoSeleccionado.precio).toFixed(2)
-            } USD$</s></span>
-            <span>${
-              (juegoSeleccionado.precio - (juegoSeleccionado.precio * juegoSeleccionado.descuento/100)).toFixed(2)
-            } USD$ </span>`;
-          } else {
-            return `<span>${juegoSeleccionado.precio} USD$</span>`;
-          }
-        }
-        
-        section.innerHTML = `
+            <span class="text-secondary"><s>${juegoSeleccionado.precio.toFixed(
+              2
+            )} USD$</s></span>
+            <span>${(
+              juegoSeleccionado.precio -
+              (juegoSeleccionado.precio * juegoSeleccionado.descuento) / 100
+            ).toFixed(2)} USD$ </span>`;
+  } else {
+    return `<span>${juegoSeleccionado.precio} USD$</span>`;
+  }
+}
+
+section.innerHTML = `
         <h1 class="text-start">${juegoSeleccionado.nombre}</h1>
         <div class="d-flex">
         ${estrellasPromedio(juegoSeleccionado.opiniones)}
@@ -183,15 +181,13 @@ function precioJuego(juegoSeleccionado) {
               <p>
               <strong>CPU:</strong> ${juegoSeleccionado.cpuM}
               </p>
-              <p><strong>Memoria:</strong> 8 GB</p>
+              <p><strong>Memoria:</strong>${
+                juegoSeleccionado.almacenamientoM
+              } </p>
               <p>
-              <strong>GPU:</strong> ${
-                juegoSeleccionado.gpuM
-              }
+              <strong>GPU:</strong> ${juegoSeleccionado.gpuM}
               </p>
-              <p><strong>DirectX:</strong> ${
-                juegoSeleccionado.directxM
-              }</p>
+              <p><strong>DirectX:</strong> ${juegoSeleccionado.directxM}</p>
               <p><strong>Almacenamiento:</strong> ${
                 juegoSeleccionado.almacenamientoM
               }</p>
@@ -201,20 +197,18 @@ function precioJuego(juegoSeleccionado) {
               <p>
               <strong>Versión del sistema operativo:</strong> ${
                 juegoSeleccionado.versionR
-                  }
+              }
                 </p>
                 <p>
-                <strong>CPU:</strong> (AMD) ${juegoSeleccionado.cpuR}
+                <strong>CPU:</strong> ${juegoSeleccionado.cpuR}
                 </p>
-                <p><strong>Memoria:</strong> 8 GB</p>
-                <p>
-                <strong>GPU:</strong> ${
-                  juegoSeleccionado.gpuR
-                }
-                </p>
-                <p><strong>DirectX:</strong> ${
-                  juegoSeleccionado.directxR
+                <p><strong>Memoria:</strong> ${
+                  juegoSeleccionado.almacenamientoR
                 }</p>
+                <p>
+                <strong>GPU:</strong> ${juegoSeleccionado.gpuR}
+                </p>
+                <p><strong>DirectX:</strong> ${juegoSeleccionado.directxR}</p>
                 <p><strong>Almacenamiento:</strong> ${
                   juegoSeleccionado.almacenamientoR
                 }</p>
@@ -229,15 +223,15 @@ function precioJuego(juegoSeleccionado) {
                 </section>
                 
                 `;
-                main.prepend(section);
-                
-                enviarOpinion.addEventListener("click", (e) => {
-                  e.preventDefault();
-                  const puntajeModal = document.querySelector("#puntaje");
-                  const opinionModal = document.querySelector("#textoModal");
-                  if (
-                    verificarPuntaje(puntajeModal.value, puntajeModal) &&
-                    verificarTexto(opinionModal.value, opinionModal)
+main.prepend(section);
+
+enviarOpinion.addEventListener("click", (e) => {
+  e.preventDefault();
+  const puntajeModal = document.querySelector("#puntaje");
+  const opinionModal = document.querySelector("#textoModal");
+  if (
+    verificarPuntaje(puntajeModal.value, puntajeModal) &&
+    verificarTexto(opinionModal.value, opinionModal)
   ) {
     let timerInterval;
     Swal.fire({
@@ -276,14 +270,18 @@ function precioJuego(juegoSeleccionado) {
     });
   }
 });
-verificarInicio()
-function verificarInicio(){
-  if( user == undefined || user ==null || usuarioSeleccionado ==undefined || usuarioSeleccionado ==null){
-     section.innerHTML+=`<div class="d-flex justify-content-center">
-     INICIA SESION PARA AÑADIR UNA RESEÑA</div>`
-  }
-  else{
-    section.innerHTML+=`<div class="d-flex justify-content-center">
+verificarInicio();
+function verificarInicio() {
+  if (
+    user == undefined ||
+    user == null ||
+    usuarioSeleccionado == undefined ||
+    usuarioSeleccionado == null
+  ) {
+    section.innerHTML += `<div class="d-flex justify-content-center">
+     INICIA SESION PARA AÑADIR UNA RESEÑA</div>`;
+  } else {
+    section.innerHTML += `<div class="d-flex justify-content-center">
               <button
                 id="botonAddOpinion"
                   class="btn btn-outline-success"
@@ -292,8 +290,6 @@ function verificarInicio(){
                   >
                   Añadir una reseña
                 </button>
-                </div>`
+                </div>`;
   }
-
-
 }

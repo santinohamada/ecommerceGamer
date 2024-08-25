@@ -24,9 +24,7 @@
       crossorigin="anonymous"
     />
     <link
-     
       rel="stylesheet"
-     
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../css/style.css" />
@@ -174,9 +172,7 @@
                 <i class="bi bi-facebook"></i>
               </a>
             </div>
-            <a class="btn text-light" id="btnModalFooter"
-              >Iniciar Sesion</a
-            >
+            <a class="btn text-light" id="btnModalFooter">Iniciar Sesion</a>
           </div>
         </div>
       </div>
@@ -208,86 +204,13 @@
                 <th>Categoria</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="fila-tabla">
-                <td>
-                  <img
-                    src="../images/PagAdministrador.img/prueba1.jpg"
-                    alt="portada del juego"
-                    class="imagen-catalogo-juego"
-                  />
-                </td>
-                <td>1</td>
-                <td>Need for Speed Hot Persuit Remasted</td>
-                <td>Sony</td>
-                <td>Accion, Carreras</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                  <button class="btn btn-primary">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr class="fila-tabla">
-                <td>
-                  <img
-                    src="../images/PagAdministrador.img/prueba2.jpg"
-                    alt="portada del juego"
-                    class="imagen-catalogo-juego"
-                  />
-                </td>
-                <td>2</td>
-                <td>The Legend of Zelda: Breath of the Wild</td>
-                <td>Nitendo</td>
-                <td>Aventura, Accion</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                  <button class="btn btn-primary">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                </td>
-              <tr class="fila-tabla">
-                <td>
-                  <img
-                    src="../images/PagAdministrador.img/prueba3.jpg"
-                    alt="portada del juego"
-                    class="imagen-catalogo-juego"
-                  />
-                </td>
-                <td>3</td>
-                <td>Fornite</td>
-                <td>Epic Games</td>
-                <td>Battle Royale , Accion</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                  <button class="btn btn-primary">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                </td>
-              </tr>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </section>
       <!-- MODAL agregar juego -->
       <div
-        class="modal fade  modal-xl"
+        class="modal fade modal-xl"
         id="modalJuego"
         tabindex="-1"
         aria-labelledby="modalJuegoLabel"
@@ -305,7 +228,11 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form action="" id="formAgregarJuego" class="row container d-flex justify-content-center">
+              <form
+                action=""
+                id="formAgregarJuego"
+                class="row container d-flex justify-content-center"
+              >
                 <div class="mb-3 col-12 col-md-5">
                   <label for="foto" class="form-label">Foto*</label>
                   <input
@@ -364,23 +291,35 @@
                   <label for="descripcion" class="form-label"
                     >Descripcion*</label
                   >
-                  <textarea class="form-control"
-                  id="descripcion"
-                  type="text"
-                  minlength="3"
-                  maxlength="500"></textarea>
+                  <textarea
+                    class="form-control"
+                    id="descripcion"
+                    type="text"
+                    minlength="3"
+                    maxlength="500"
+                  ></textarea>
                 </div>
                 <div class="mb-3 row">
                   <label for="categoria" class="form-label">Categoria/s</label>
                   <div class="col-6 col-md-2">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="categoria-accion">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-accion"
+                      />
                       <label class="form-check-label" for="categoria-accion">
                         Acción
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="categoria-rpg" >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-rpg"
+                      />
                       <label class="form-check-label" for="categoria-rpg">
                         RPG
                       </label>
@@ -388,27 +327,50 @@
                   </div>
                   <div class="col-6 col-md-2">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="categoria-puzzle">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-puzzle"
+                      />
                       <label class="form-check-label" for="categoria-puzzle">
                         Puzzle
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="categoria-battleroyale">
-                      <label class="form-check-label" for="categoria-battleroyale">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-battleroyale"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-battleroyale"
+                      >
                         Battle Royale
                       </label>
                     </div>
                   </div>
                   <div class="col-6 col-md-2">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="categoria-carreras">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-carreras"
+                      />
                       <label class="form-check-label" for="categoria-carreras">
                         Carreras
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="categoria-shooter">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-shooter"
+                      />
                       <label class="form-check-label" for="categoria-shooter">
                         Shooter
                       </label>
@@ -419,7 +381,8 @@
                 <div class="col-12 col-md-6 row">
                   <h4 class="text-center">Minimos</h4>
                   <div class="mb-3">
-                    <label for="versionM" class="form-label">Version del sistema operativo*
+                    <label for="versionM" class="form-label"
+                      >Version del sistema operativo*
                     </label>
                     <input
                       class="form-control"
@@ -470,7 +433,9 @@
                     />
                   </div>
                   <div class="mb-3 col-12 col-lg-6">
-                    <label for="almacenamientoM" class="form-label">Almacenamiento*</label>
+                    <label for="almacenamientoM" class="form-label"
+                      >Almacenamiento*</label
+                    >
                     <input
                       class="form-control"
                       id="almacenamientoM"
@@ -483,7 +448,9 @@
                 <div class="col-12 col-md-6 row">
                   <h4 class="text-center">Recomendados</h4>
                   <div class="mb-3">
-                    <label for="versionR" class="form-label">Version del sistema operativo*</label>
+                    <label for="versionR" class="form-label"
+                      >Version del sistema operativo*</label
+                    >
                     <input
                       class="form-control"
                       id="versionR"
@@ -533,7 +500,9 @@
                     />
                   </div>
                   <div class="mb-3 col-12 col-lg-6">
-                    <label for="almacenamientoR" class="form-label">Almacenamiento*</label>
+                    <label for="almacenamientoR" class="form-label"
+                      >Almacenamiento*</label
+                    >
                     <input
                       class="form-control"
                       id="almacenamientoR"
@@ -543,29 +512,379 @@
                     />
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary w-25">Enviar</button>
+                <button type="submit" class="btn btn-primary w-25">
+                  Enviar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL editar juego -->
+      <div
+        class="modal fade modal-xl"
+        id="modalEditarJuego"
+        tabindex="-1"
+        aria-labelledby="modalEditarJuegoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="modalEditarJuegoLabel">
+                Editar Juego
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action=""
+                id="formEditarJuego"
+                class="row container d-flex justify-content-center"
+              >
+                <div class="mb-3 col-12 col-md-5">
+                  <label for="fotoEditar" class="form-label">Foto*</label>
+                  <input
+                    class="form-control"
+                    id="fotoEditar"
+                    type="text"
+                    minlength="3"
+                    maxlength="100"
+                    required
+                  />
+                </div>
+                <div class="mb-3 col-12 col-md-7">
+                  <label for="tituloEditar" class="form-label">Titulo*</label>
+                  <input
+                    class="form-control"
+                    id="tituloEditar"
+                    type="text"
+                    minlength="2"
+                    maxlength="80"
+                    required
+                  />
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                  <label for="precioEditar" class="form-label">Precio*</label>
+                  <input
+                    class="form-control"
+                    id="precioEditar"
+                    type="number"
+                    minlength="1"
+                    maxlength="9"
+                  />
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                  <label for="descuentoEditar" class="form-label"
+                    >Descuento</label
+                  >
+                  <input
+                    class="form-control"
+                    id="descuentoEditar"
+                    type="number"
+                    maxlength="9"
+                  />
+                </div>
+                <div class="mb-3 col-12 col-md-8">
+                  <label for="desarrolladorEditar" class="form-label"
+                    >Desarrollador*</label
+                  >
+                  <input
+                    class="form-control"
+                    id="desarrolladorEditar"
+                    type="text"
+                    minlength="3"
+                    maxlength="800"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionEditar" class="form-label"
+                    >Descripcion*</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="descripcionEditar"
+                    type="text"
+                    minlength="3"
+                    maxlength="500"
+                  ></textarea>
+                </div>
+                <div class="mb-3 row">
+                  <label for="categoria" class="form-label">Categoria/s</label>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-accionEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-accionEditar"
+                      >
+                        Acción
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-rpgEditar"
+                      />
+                      <label class="form-check-label" for="categoria-rpgEditar">
+                        RPG
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-puzzleEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-puzzleEditar"
+                      >
+                        Puzzle
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-battleroyaleEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-battleroyaleEditar"
+                      >
+                        Battle Royale
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-carrerasEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-carrerasEditar"
+                      >
+                        Carreras
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-shooterEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-shooterEditar"
+                      >
+                        Shooter
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="text-center">Requisitos del juego</h3>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Minimos</h4>
+                  <div class="mb-3">
+                    <label for="versionMEditar" class="form-label"
+                      >Version del sistema operativo*
+                    </label>
+                    <input
+                      class="form-control"
+                      id="versionMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuMEditar" class="form-label">CPU*</label>
+                    <input
+                      class="form-control"
+                      id="cpuMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaMEditar" class="form-label"
+                      >Memoria*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="memoriaMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="8"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuMEditar" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxMEditar" class="form-label"
+                      >DirectX*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="directxMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoMEditar" class="form-label"
+                      >Almacenamiento*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="almacenamientoMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="10"
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Recomendados</h4>
+                  <div class="mb-3">
+                    <label for="versionREditar" class="form-label"
+                      >Version del sistema operativo*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="versionREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuREditar" class="form-label">CPU*</label>
+                    <input
+                      class="form-control"
+                      id="cpuREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaREditar" class="form-label"
+                      >Memoria*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="memoriaREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="8"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuREditar" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxREditar" class="form-label"
+                      >DirectX*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="directxREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoREditar" class="form-label"
+                      >Almacenamiento*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="almacenamientoREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="10"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  id="confirmarEditar"
+                  class="btn btn-primary w-25"
+                >
+                  Enviar
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
     </main>
-    <footer class="text-center text-white">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline align-items-center p-2 rojito" >
+    <footer class="text-center text-white mt-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline align-items-center p-2 rojito"
+      >
         <div class="d-flex">
           <a href="../index.html">
-  
-            <img src="../images/NETHER-SHOP-12-8-2024.png" id="logo-navbar" alt="">
+            <img
+              src="../images/NETHER-SHOP-12-8-2024.png"
+              id="logo-navbar"
+              alt=""
+            />
           </a>
         </div>
         <div class="d-flex flex-column flex-md-row justify-content-center">
-          
-          <a href="./error404.html" class="mt-2 me-md-3 a-footer text-white">Contactanos</a>
-          <a href="./error404.html" class="mt-2 a-footer  text-white">Politicas de privacidad</a>
+          <a href="./error404.html" class="mt-2 me-md-3 a-footer text-white"
+            >Contactanos</a
+          >
+          <a href="./error404.html" class="mt-2 a-footer text-white"
+            >Politicas de privacidad</a
+          >
         </div>
         <div class="mt-3 d-flex justify-content-center">
           <div>
-
             <a href="./error404.html" class="a-footer text-white">
               <i class="bi bi-facebook"></i>
             </a>
@@ -578,8 +897,10 @@
           </div>
         </div>
       </div>
-      <div class="text-center p-3 naranjita" >
-        <p class="mb-0">&copy; 2024 NetherShop. Todos los derechos reservados.</p>
+      <div class="text-center p-3 naranjita">
+        <p class="mb-0">
+          &copy; 2024 NetherShop. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
     <script
@@ -590,5 +911,3 @@
     <script type="module" src="../js/administracion.js"></script>
   </body>
 </html>
-
-

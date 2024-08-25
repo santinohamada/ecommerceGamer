@@ -112,16 +112,15 @@ function comentarios(juegoSeleccionado) {
 }
 
 function precioJuego(juegoSeleccionado) {
-  if (juegoSeleccionado.descuento) {
+  if (juegoSeleccionado.descuento!="" || juegoSeleccionado.descuento !==0) {
     return `<span class="badge fs-5 celesteClarito me-2">-${
-      juegoSeleccionado.cantidadDescuento
+      juegoSeleccionado.descuento
     }%</span>
             <span class="text-secondary"><s>${
               (juegoSeleccionado.precio).toFixed(2)
             } USD$</s></span>
             <span>${
-              (juegoSeleccionado.precio *
-              (1 - juegoSeleccionado.cantidadDescuento / 100)).toFixed(2)
+              (juegoSeleccionado.precio - (juegoSeleccionado.precio * juegoSeleccionado.descuento/100)).toFixed(2)
             } USD$ </span>`;
           } else {
             return `<span>${juegoSeleccionado.precio} USD$</span>`;
@@ -139,7 +138,7 @@ function precioJuego(juegoSeleccionado) {
         <img
         src="${juegoSeleccionado.foto}"
         alt="foto del juego"
-        class="img-fluid w-100"
+        class="img-fluid fotoDetalle"
         />
         </div>
         </article>
@@ -178,48 +177,46 @@ function precioJuego(juegoSeleccionado) {
               <h3>Mínimos</h3>
               <p>
               <strong>Versión del sistema operativo:</strong> ${
-                juegoSeleccionado.requisitosMinimos[0]
+                juegoSeleccionado.versionM
               }
               </p>
               <p>
-              <strong>CPU:</strong> (AMD) Phenom II X4 965 o equivalente (Intel)
-              Core i3-2120 o equivalente
+              <strong>CPU:</strong> ${juegoSeleccionado.cpuM}
               </p>
               <p><strong>Memoria:</strong> 8 GB</p>
               <p>
               <strong>GPU:</strong> ${
-                juegoSeleccionado.requisitosMinimos[1]
+                juegoSeleccionado.gpuM
               }
               </p>
               <p><strong>DirectX:</strong> ${
-                juegoSeleccionado.requisitosMinimos[2]
+                juegoSeleccionado.directxM
               }</p>
               <p><strong>Almacenamiento:</strong> ${
-                juegoSeleccionado.requisitosMinimos[3]
+                juegoSeleccionado.almacenamientoM
               }</p>
               </div>
               <div class="col-6">
               <h3>Recomendado</h3>
               <p>
               <strong>Versión del sistema operativo:</strong> ${
-                juegoSeleccionado.requisitosRecomendados[0]
+                juegoSeleccionado.versionR
                   }
                 </p>
                 <p>
-                <strong>CPU:</strong> (AMD) Phenom II X4 965 o equivalente (Intel)
-                Core i3-2120 o equivalente
+                <strong>CPU:</strong> (AMD) ${juegoSeleccionado.cpuR}
                 </p>
                 <p><strong>Memoria:</strong> 8 GB</p>
                 <p>
                 <strong>GPU:</strong> ${
-                  juegoSeleccionado.requisitosRecomendados[1]
+                  juegoSeleccionado.gpuR
                 }
                 </p>
                 <p><strong>DirectX:</strong> ${
-                  juegoSeleccionado.requisitosRecomendados[2]
+                  juegoSeleccionado.directxR
                 }</p>
                 <p><strong>Almacenamiento:</strong> ${
-                  juegoSeleccionado.requisitosRecomendados[3]
+                  juegoSeleccionado.almacenamientoR
                 }</p>
                 </div>
                 </article>

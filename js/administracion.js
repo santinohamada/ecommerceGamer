@@ -5,6 +5,7 @@ import {
   verificarAdminPages,
 } from "./navLogueado.js";
 import { Juego } from "./classJuegos.js";
+import { validarLink,cantidadCaracteres } from "./validaciones.js";
 crearVariables();
 updateNavPages();
 const listaUsuario = crearUsuarios();
@@ -92,7 +93,25 @@ const crearJuego = (e) => {
       );
     }
   });
-
+  if (
+    cantidadCaracteres(nombre, 2, 50) &&
+    cantidadCaracteres(precio, 1, 9) &&
+    cantidadCaracteres(descripcion, 3, 500) &&
+    cantidadCaracteres(desarrollador, 3, 50) &&
+    cantidadCaracteres(versionM,3,20)&&
+    cantidadCaracteres(cpuM,3,50)&&
+    cantidadCaracteres(memoriaM,1,15)&&
+    cantidadCaracteres(gpuM,3,50)&&
+    cantidadCaracteres(directxM,3,15)&&
+    cantidadCaracteres(almacenamientoM,3,20)&&
+    cantidadCaracteres(versionR,3,20)&&
+    cantidadCaracteres(cpuR,3,50)&&
+    cantidadCaracteres(memoriaR,1,15)&&
+    cantidadCaracteres(gpuR,3,50)&&
+    cantidadCaracteres(directxR,3,15)&&
+    cantidadCaracteres(almacenamientoR,3,20) &&
+    validarLink(foto)
+  ){
   const nuevoJuego = new Juego(
     undefined,
     foto.value,
@@ -119,7 +138,7 @@ const crearJuego = (e) => {
   listaJuegos.push(nuevoJuego);
   limpiarFormulario();
   guardarEnLocalStorage();
-  cargaTablaJuegos()
+  cargaTablaJuegos()}
 };
 const limpiarFormulario = () => {
   formAgregarJuego.reset();
@@ -155,14 +174,16 @@ window.editarJuego = (idJuego) => {
   gpuREditar.value = listaJuegos[juegoIndex].gpuR;
   directxREditar.value = listaJuegos[juegoIndex].directxR;
   almacenamientoREditar.value = listaJuegos[juegoIndex].almacenamientoR;
-
+  
   botonConfirmarEditar.addEventListener("click", () => {
     actualizarValoresJuegos(juegoIndex);
+    console.log(juegoIndex)
   });
   cargaTablaJuegos()
 };
 const botonConfirmarEditar = document.querySelector("#confirmarEditar");
 function actualizarValoresJuegos(juegoIndex) {
+
   categoriasSeleccionadasEditar.length = 0;
   document.querySelectorAll(".checksEditar").forEach((checkbox) => {
     if (checkbox.checked) {
@@ -171,6 +192,26 @@ function actualizarValoresJuegos(juegoIndex) {
       );
     }
   });
+  if (
+    cantidadCaracteres(nombreEditar, 2, 50) &&
+    cantidadCaracteres(precioEditar, 1, 9) &&
+    cantidadCaracteres(descripcionEditar, 3, 500) &&
+    cantidadCaracteres(desarrolladorEditar, 3, 50) &&
+    cantidadCaracteres(versionMEditar,3,20)&&
+    cantidadCaracteres(cpuMEditar,3,50)&&
+    cantidadCaracteres(memoriaMEditar,1,15)&&
+    cantidadCaracteres(gpuMEditar,3,50)&&
+    cantidadCaracteres(directxMEditar,3,15)&&
+    cantidadCaracteres(almacenamientoMEditar,3,20)&&
+    cantidadCaracteres(versionREditar,3,20)&&
+    cantidadCaracteres(cpuREditar,3,50)&&
+    cantidadCaracteres(memoriaREditar,1,15)&&
+    cantidadCaracteres(gpuREditar,3,50)&&
+    cantidadCaracteres(directxREditar,3,15)&&
+    cantidadCaracteres(almacenamientoREditar,3,20) &&
+    validarLink(fotoEditar)
+  ){
+    
   listaJuegos[juegoIndex].foto = fotoEditar.value;
   listaJuegos[juegoIndex].nombre = nombreEditar.value;
   listaJuegos[juegoIndex].precio = parseFloat(precioEditar.value);
@@ -192,6 +233,8 @@ function actualizarValoresJuegos(juegoIndex) {
   listaJuegos[juegoIndex].almacenamientoR = almacenamientoREditar.value;
   listaJuegos.splice(juegoIndex, 1, listaJuegos[juegoIndex]);
   guardarEnLocalStorage();
+  location.reload()
+}
 }
 const dibujarFila = (juego) => {
   tbody.innerHTML += `<tr class="fila-tabla">
@@ -251,6 +294,7 @@ const dibujarFila = (juego) => {
 botonAgregarJuego.addEventListener("click", mostrarModal);
 formAgregarJuego.addEventListener("submit", crearJuego);
 cargaTablaJuegos();
-formEditarJuego.addEventListener("submit", (idJuego) => {
-  editarJuego(idJuego);
+formEditarJuego.addEventListener("submit", (e,idJuego) => {
+  e.preventDefault()
+  console.log(idJuego)
 });

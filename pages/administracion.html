@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Nether Shop: Tienda de juegos digitales creada por estudiantes de Rolling Code School. Encuentra una amplia selección de juegos para todas las plataformas. Desarrolladores: Hamada Santino, Maria Emilia Ceballos, Elian Miranda."
+    />
+    <meta
+      name="keywords"
+      content="Nether Shop, juegos digitales, tienda de juegos, Rolling Code School, videojuegos, compra de juegos, juegos para PC, juegos online"
+    />
+    <meta
+      name="author"
+      content="Hamada Santino, Maria Emilia Ceballos, Leandro Lobos, Elian Miranda"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/favicon-32x32.png" type="image/x-icon" />
+    <title>Nether Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="
+       https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pagAdmin.css" />
+    <link rel="stylesheet" href="../css/pagAdmin.css" />
+  </head>
+  <body data-bs-theme="dark">
+    <header>
+      <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <div id="logo-navbar">
+              <img
+                class="img-fluid"
+                src="../images/NETHER-SHOP-12-8-2024.png"
+                alt="logo de la pagina"
+              />
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ul-nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./sobreNosotros.html"
+                    >Sobre Nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./error404.html"
+                    >Soporte</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              class="nav-link navbar-nav"
+              data-bs-toggle="modal"
+              data-bs-target="#modal_login"
+              aria-current="page"
+              href="#"
+              >Iniciar Sesion
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--div del modal login-->
+    <div
+      class="modal fade"
+      id="modal_login"
+      tabindex="-1"
+      aria-labelledby="miModalLabel"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-light" id="miModalLabel">
+              Inicie Sesion
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-sm" class="img-fluid">
+              <img
+                src="/images/joystickModal.jpg"
+                class="rounded mx-auto d-block me-4 img-fluid"
+                alt="imagen del login"
+                id="modal_body_img"
+              />
+              <form id="formularioLogIn">
+                <div class="form-group mb-3 text-light">
+                  <label for="email"> Email:</label>
+                  <input
+                    type="email"
+                    class="rounded-2"
+                    id="email"
+                    minlength="10"
+                    maxlength="100"
+                    required
+                  />
+                </div>
+                <div class="form-group text-light">
+                  <label for="Contraseña">Contraseña:</label>
+                  <input
+                    type="password"
+                    class="rounded-2"
+                    id="Contraseña"
+                    minlength="8"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+              </form>
+              <a href="./error404.html" class="text-secondary-emphasis">
+                Recuperar Contraseña
+              </a>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between align-items-start">
+            <div>
+              <h6 class="text-light">O inicie sesion<br />con:</h6>
+              <a href="./error404.html" id="google" class="me-2 fs-3">
+                <i class="bi bi-google"></i>
+              </a>
+              <a href="./error404.html" id="fb" class="fs-3">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </div>
+            <a class="btn text-light" id="btnModalFooter">Iniciar Sesion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <article>
+        <h1 class="francois-one-regular ps-5 py-2">Administrador de Juegos</h1>
+      </article>
+      <div class="d-flex justify-content-between">
+        <h2>Lista de juegos</h2>
+        <button
+          id="botonAgregarJuego"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modalJuego"
+        >
+          Agregar juego
+        </button>
+      </div>
+      <section class="container d-flex justify-content-center">
+        <div class="table-responsive">
+          <table class="table-light table-bordered">
+            <thead>
+              <tr class="text-center">
+                <th>Foto</th>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Desarrollador</th>
+                <th>Categoria</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+      <!-- MODAL agregar juego -->
+      <div
+        class="modal fade modal-xl"
+        id="modalJuego"
+        tabindex="-1"
+        aria-labelledby="modalJuegoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="modalJuegoLabel">Juego</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action=""
+                id="formAgregarJuego"
+                class="row container d-flex justify-content-center"
+              >
+                <div class="mb-3 col-12 col-md-5">
+                  <label for="foto" class="form-label">Foto*</label>
+                  <input
+                    class="form-control"
+                    id="foto"
+                    type="text"
+                    minlength="3"
+                    maxlength="100"
+                    required
+                    placeholder="agregue el link"
+                  />
+                  <div class="invalid-feedback">Dato obligatorio</div>
+                </div>
+                <div class="mb-3 col-12 col-md-7">
+                  <label for="titulo" class="form-label">Titulo*</label>
+                  <input
+                    class="form-control"
+                    id="titulo"
+                    type="text"
+                    minlength="2"
+                    maxlength="50"
+                    required
+                    placeholder="Minecraft"
+                  />
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 2 y 50 caracteres
+                  </div>
+                </div>
+                <div class="mb-3 col-6 col-md-3">
+                  <label for="precio" class="form-label">Precio*</label>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input
+                      class="form-control"
+                      id="precio"
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      max="2000"
+                      minlength="1"
+                      maxlength="9"
+                      placeholder="170"
+                    />
+                  </div>
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 1 y 9 caracteres
+                  </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                  <label for="descuento" class="form-label">Descuento</label>
+                  <div class="input-group">
+                    <input
+                      class="form-control"
+                      id="descuento"
+                      type="number"
+                      maxlength="3"
+                      max="100"
+                      placeholder="15"
+                    />
+                    <span class="input-group-text">%</span>
+                  </div>
+                </div>
+                <div class="mb-3 col-12 col-md-7">
+                  <label for="desarrollador" class="form-label"
+                    >Desarrollador*</label
+                  >
+                  <input
+                    class="form-control"
+                    id="desarrollador"
+                    type="text"
+                    minlength="3"
+                    maxlength="50"
+                    required
+                    placeholder="Mojang Studios"
+                  />
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 3 y 50 caracteres
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="descripcion" class="form-label"
+                    >Descripcion*</label
+                  >
+                  <textarea
+                    rows="4"
+                    class="form-control"
+                    id="descripcion"
+                    type="text"
+                    minlength="3"
+                    maxlength="500"
+                    placeholder=" Minecraft es un videojuego de construcción de mundo abierto en el que los jugadores interactúan con un entorno en 3D formado por bloques. Pueden recolectar recursos, construir estructuras, luchar contra monstruos y explorar."
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 3 y 500 caracteres
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="categoria" class="form-label">Categoria/s</label>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-accion"
+                      />
+                      <label class="form-check-label" for="categoria-accion">
+                        Acción
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-rpg"
+                      />
+                      <label class="form-check-label" for="categoria-rpg">
+                        RPG
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-puzzle"
+                      />
+                      <label class="form-check-label" for="categoria-puzzle">
+                        Puzzle
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-battleroyale"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-battleroyale"
+                      >
+                        Battle Royale
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-carreras"
+                      />
+                      <label class="form-check-label" for="categoria-carreras">
+                        Carreras
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="categoria-shooter"
+                      />
+                      <label class="form-check-label" for="categoria-shooter">
+                        Shooter
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="text-center">Requisitos del juego</h3>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Minimos</h4>
+                  <div class="mb-3">
+                    <label for="versionM" class="form-label"
+                      >Version del sistema operativo*
+                    </label>
+                    <input
+                      class="form-control"
+                      id="versionM"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                      placeholder="Windows 7"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 20 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuM" class="form-label">CPU*</label>
+                    <textarea
+                      class="form-control"
+                      id="cpuM"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                      placeholder="Intel Core i3-3210 / AMD A8-7600 APU o equivalente"
+                    ></textarea>
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaM" class="form-label">Memoria*</label>
+                    <input
+                      class="form-control"
+                      id="memoriaM"
+                      type="text"
+                      minlength="1"
+                      maxlength="15"
+                      placeholder="4 GB RAM"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 1 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuM" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuM"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                      placeholder="Intel HD Graphics 4000 / AMD Radeon R5"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxM" class="form-label">DirectX*</label>
+                    <input
+                      class="form-control"
+                      id="directxM"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                      placeholder="Versión 9.0"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoM" class="form-label"
+                      >Almacenamiento*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="almacenamientoM"
+                      type="text"
+                      minlength="1"
+                      maxlength="20"
+                      placeholder="1 GB"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 1 y 20 caracteres
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Recomendados</h4>
+                  <div class="mb-3">
+                    <label for="versionR" class="form-label"
+                      >Version del sistema operativo*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="versionR"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                      placeholder=" Windows 10"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 20 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuR" class="form-label">CPU*</label>
+                    <textarea
+                      class="form-control"
+                      id="cpuR"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                      placeholder="Intel Core i5-4690 / AMD A10-7800 o equivalente"
+                    ></textarea>
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaR" class="form-label">Memoria*</label>
+                    <input
+                      class="form-control"
+                      id="memoriaR"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                      placeholder="8 GB RAM"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 1 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuR" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuR"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                      placeholder=" NVIDIA GeForce 700 Series / AMD Radeon Rx 200 Series"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxR" class="form-label">DirectX*</label>
+                    <input
+                      class="form-control"
+                      id="directxR"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                      placeholder="Versión 11"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoR" class="form-label"
+                      >Almacenamiento*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="almacenamientoR"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                      placeholder="4 GB"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 20 caracteres
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-25">
+                  Enviar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL editar juego -->
+      <div
+        class="modal fade modal-xl"
+        id="modalEditarJuego"
+        tabindex="-1"
+        aria-labelledby="modalEditarJuegoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="modalEditarJuegoLabel">
+                Editar Juego
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action=""
+                id="formEditarJuego"
+                class="row container d-flex justify-content-center"
+              >
+                <div class="mb-3 col-12 col-md-5">
+                  <label for="fotoEditar" class="form-label">Foto*</label>
+                  <input
+                    class="form-control"
+                    id="fotoEditar"
+                    type="text"
+                    minlength="3"
+                    maxlength="100"
+                    required
+                  />
+                  <div class="invalid-feedback">Dato obligatorio</div>
+                </div>
+                <div class="mb-3 col-12 col-md-7">
+                  <label for="tituloEditar" class="form-label">Titulo*</label>
+                  <input
+                    class="form-control"
+                    id="tituloEditar"
+                    type="text"
+                    minlength="2"
+                    maxlength="80"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 2 y 50 caracteres
+                  </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                  <label for="precioEditar" class="form-label">Precio*</label>
+                  <input
+                    class="form-control"
+                    id="precioEditar"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    max="2000"
+                    minlength="1"
+                    maxlength="4"
+                  />
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 1 y 9 caracteres
+                  </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                  <label for="descuentoEditar" class="form-label"
+                    >Descuento</label
+                  >
+                  <input
+                    class="form-control"
+                    id="descuentoEditar"
+                    type="number"
+                    maxlength="3"
+                    max="100"
+                    min="0"
+                  />
+                </div>
+                <div class="mb-3 col-12 col-md-8">
+                  <label for="desarrolladorEditar" class="form-label"
+                    >Desarrollador*</label
+                  >
+                  <input
+                    class="form-control"
+                    id="desarrolladorEditar"
+                    type="text"
+                    minlength="3"
+                    maxlength="800"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 3 y 50 caracteres
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionEditar" class="form-label"
+                    >Descripcion*</label
+                  >
+                  <textarea
+                    rows="4"
+                    class="form-control"
+                    id="descripcionEditar"
+                    type="text"
+                    minlength="3"
+                    maxlength="500"
+                    placeholder=" Minecraft es un videojuego de construcción de mundo abierto en el que los jugadores interactúan con un entorno en 3D formado por bloques. Pueden recolectar recursos, construir estructuras, luchar contra monstruos y explorar."
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Dato obligatorio, debe contener entre 3 y 500 caracteres
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="categoria" class="form-label">Categoria/s</label>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-accionEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-accionEditar"
+                      >
+                        Acción
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-rpgEditar"
+                      />
+                      <label class="form-check-label" for="categoria-rpgEditar">
+                        RPG
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-puzzleEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-puzzleEditar"
+                      >
+                        Puzzle
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-battleroyaleEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-battleroyaleEditar"
+                      >
+                        Battle Royale
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-2">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-carrerasEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-carrerasEditar"
+                      >
+                        Carreras
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input checksEditar"
+                        type="checkbox"
+                        value=""
+                        id="categoria-shooterEditar"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="categoria-shooterEditar"
+                      >
+                        Shooter
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="text-center">Requisitos del juego</h3>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Minimos</h4>
+                  <div class="mb-3">
+                    <label for="versionMEditar" class="form-label"
+                      >Version del sistema operativo*
+                    </label>
+                    <input
+                      class="form-control"
+                      id="versionMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="30"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 30 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuMEditar" class="form-label">CPU*</label>
+                    <input
+                      class="form-control"
+                      id="cpuMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaMEditar" class="form-label"
+                      >Memoria*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="memoriaMEditar"
+                      type="text"
+                      minlength="1"
+                      maxlength="15"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 1 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuMEditar" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxMEditar" class="form-label"
+                      >DirectX*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="directxMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoMEditar" class="form-label"
+                      >Almacenamiento*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="almacenamientoMEditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 1 y 20 caracteres
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 row">
+                  <h4 class="text-center">Recomendados</h4>
+                  <div class="mb-3">
+                    <label for="versionREditar" class="form-label"
+                      >Version del sistema operativo*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="versionREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 20 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpuREditar" class="form-label">CPU*</label>
+                    <input
+                      class="form-control"
+                      id="cpuREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="50"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="memoriaREditar" class="form-label"
+                      >Memoria*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="memoriaREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 1 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gpuREditar" class="form-label">GPU*</label>
+                    <input
+                      class="form-control"
+                      id="gpuREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 50 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="directxREditar" class="form-label"
+                      >DirectX*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="directxREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="15"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 15 caracteres
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-lg-6">
+                    <label for="almacenamientoREditar" class="form-label"
+                      >Almacenamiento*</label
+                    >
+                    <input
+                      class="form-control"
+                      id="almacenamientoREditar"
+                      type="text"
+                      minlength="3"
+                      maxlength="20"
+                    />
+                    <div class="invalid-feedback">
+                      Dato obligatorio, debe contener entre 3 y 20 caracteres
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  id="confirmarEditar"
+                  class="btn btn-primary w-25"
+                >
+                  Enviar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-center text-white mt-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline align-items-center p-2 rojito"
+      >
+        <div class="d-flex">
+          <a href="../index.html">
+            <img
+              src="../images/NETHER-SHOP-12-8-2024.png"
+              id="logo-navbar"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-center">
+          <a href="./error404.html" class="mt-2 me-md-3 a-footer text-white"
+            >Contactanos</a
+          >
+          <a href="./error404.html" class="mt-2 a-footer text-white"
+            >Politicas de privacidad</a
+          >
+        </div>
+        <div class="mt-3 d-flex justify-content-center">
+          <div>
+            <a href="./error404.html" class="a-footer text-white">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="./error404.html" class="a-footer text-white mx-3">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="./error404.html" class="a-footer text-white">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3 naranjita">
+        <p class="mb-0">
+          &copy; 2024 NetherShop. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="../js/administracion.js"></script>
+  </body>
+</html>

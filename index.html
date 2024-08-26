@@ -1,15 +1,437 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Nether Shop: Tienda de juegos digitales creada por estudiantes de Rolling Code School. Encuentra una amplia selección de juegos para todas las plataformas. Desarrolladores: Hamada Santino, Maria Emilia Ceballos, Leandro Lobos, Elian Miranda."
+    />
+    <meta
+      name="keywords"
+      content="Nether Shop, juegos digitales, tienda de juegos, Rolling Code School, videojuegos, compra de juegos, juegos para PC, juegos online"
+    />
+    <meta
+      name="author"
+      content="Hamada Santino, Maria Emilia Ceballos, Leandro Lobos, Elian Miranda"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+    <title>Nether Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body data-bs-theme="dark">
+    <header>
+      <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <div id="logo-navbar">
+              <img
+                class="img-fluid"
+                src="./images/NETHER-SHOP-12-8-2024.png"
+                alt="logo de la pagina"
+              />
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ul-nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./pages/sobreNosotros.html"
+                    >Sobre Nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./pages/error404.html"
+                    >Soporte</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="d-lg-flex flex-nowrap">
+              <a
+                class="nav-link navbar-nav"
+                data-bs-toggle="modal"
+                data-bs-target="#modal_login"
+                aria-current="page"
+                href="#"
+                >Iniciar Sesion
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--div del modal login-->
+    <div
+      class="modal fade"
+      id="modal_login"
+      tabindex="-1"
+      aria-labelledby="miModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-light" id="miModalLabel">
+              Inicie Sesion
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-sm" class="img-fluid">
+              <img
+                src="./images/joystickModal.jpg"
+                class="rounded mx-auto d-block me-4 img-fluid"
+                alt="imagen del login"
+                id="modal_body_img"
+              />
+              <form>
+                <div class="form-group mb-3 text-light">
+                  <label for="email"> Email:</label>
+                  <input
+                    type="email"
+                    class="rounded-2"
+                    id="email"
+                    minlength="10"
+                    maxlength="100"
+                    required
+                  />
+                </div>
+                <div class="form-group text-light">
+                  <label for="Contraseña">Contraseña:</label>
+                  <input
+                    type="password"
+                    class="rounded-2"
+                    id="Contraseña"
+                    minlength="8"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+              </form>
+              <a href="./pages/error404.html" class="text-secondary-emphasis">
+                Recuperar Contraseña
+              </a>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between align-items-start">
+            <div>
+              <h6 class="text-light">O inicie sesion<br />con:</h6>
+              <a href="./pages/Error404.html" class="me-2 fs-3">
+                <i class="bi bi-google" id="google"></i>
+              </a>
+              <a href="./pages/Error404.html" class="fs-3">
+                <i class="bi bi-facebook" id="fb"></i>
+              </a>
+            </div>
+            <a class="btn text-light" id="btnModalFooter">Iniciar Sesion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section>
+        <div class="container py-4">
+          <div
+            id="slider-coderfree"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                class="active"
+                data-bs-target="#slider-coderfree"
+                data-bs-slide-to="0"
+              ></button>
+              <button
+                data-bs-target="#slider-coderfree"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                data-bs-target="#slider-coderfree"
+                data-bs-slide-to="2"
+              ></button>
+            </div>
+            <div class="carousel-inner carousel-fade">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img
+                  class="d-block w-100"
+                  src="https://gaming-cdn.com/images/news/articles/4892/cover/1000x563/techland-desvela-dying-light-2-stay-human-reloaded-edition-saldra-a-la-venta-el-22-de-febrero-cover65d387498c83e.jpg"
+                  alt="imagen del juego recomendado"
+                />
+                <div
+                  class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-5"
+                >
+                  <h5>DYING LIGHT 2</h5>
+                  <p>
+                    La humanidad libra una batalla perdida contra el virus.
+                    Descubre un mundo abierto posapocalíptico gobernado por
+                    hordas de zombis y usa el parkour y tus habilidades de
+                    combate para sobrevivir. Recorre la ciudad libremente
+                    durante el día, pero ten cuidado con los infectados que
+                    deambulan de noche
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="5000">
+                <img
+                  class="d-block w-100"
+                  src="https://wallpapercg.com/media/ts_orig/25888.webp"
+                  alt="imagen del juego recomendado"
+                />
+                <div
+                  class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-5"
+                >
+                  <h5>BLACK MYTH: WUKONG</h5>
+                  <p>
+                    Black Myth: Wukong es un RPG de acción inspirado en la
+                    mitología china. Encarnarás al Predestinado, que ha de
+                    embarcarse en un viaje repleto de peligros y maravillas para
+                    descubrir la verdad oculta acerca de una gloriosa leyenda
+                    del pasado.
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="5000">
+                <img
+                  class="d-block w-100"
+                  src="https://i.ebayimg.com/images/g/W9AAAOSwdPNiAR~O/s-l960.webp"
+                  alt="imagen del juego recomendado"
+                />
+                <div
+                  class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-5"
+                >
+                  <h5>ELDEN RING</h5>
+                  <p>
+                    EL NUEVO JUEGO DE ROL Y ACCIÓN DE AMBIENTACIÓN FANTÁSTICA.
+                    Álzate, Sinluz, y que la gracia te guíe para abrazar el
+                    poder del Círculo de Elden y encumbrarte como señor del
+                    Círculo en las Tierras Intermedias.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              data-bs-target="#slider-coderfree"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              data-bs-target="#slider-coderfree"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!--Aqui ira el carousel-->
+      <section></section>
+      <!--Aqui ira Los mas vendidos-->
+      <section></section>
+      <!--Ofertas limitadas por tiempo-->
+      <section></section>
+      <!--Aqui ira el carousel-->
+      <article class="container">
+        <h2 class="px-4 pt-3">Los mas vendidos</h2>
+        <hr />
+      </article>
+      <section
+        class="container d-flex flex-column justify-content-center align-content-center align-items-center"
+      >
+        <div class="div-section-vendidos">
+          <div class="divImagenesVendidas d-flex justify-content-center">
+            <img
+              class="img-juegos-mas-vendidos"
+              src="https://image.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg"
+              alt="Juego"
+              data-description="Final Fantasy VII Rebirth es un videojuego de acción RPG a cargo de Square Enix para PlaySation 5 que continúa con la historia de Final Fantasy VII Remake. La travesía desconocida continúa… Tras escapar de la distópica ciudad de Midgar, Cloud y sus amigos se embarcan en un viaje por todo el planeta. Les aguardan nuevas aventuras en vasto y vibrante mundo. Recorre las praderas cubiertas de hierba a lomo de chocobo y explora los extensos ambientes. Combina el pensamiento estratégico con una emocionante acción de combate junto a tus camaradas, incluyendo personajes nuevos añadidos. Profundiza sus relaciones para desatar poderosos combos de equipo."
+            />
+          </div>
+          <div class="divImagenesVendidas">
+            <img
+              class="img-juegos-mas-vendidos"
+              src="https://image.api.playstation.com/vulcan/ap/rnd/202309/0610/5ac881e0e3f0e361826382f894b4050776079eb18c1692ea.png"
+              alt="Juego"
+              data-description="Eiyuden Chronicle: Hundred Heroes es un RPG a cargo de Rabbit & Bear Studios y 505 Games para PC, PlayStation 4, Xbox One, PlayStation 5, Xbox Series y Switch de los creadores de la saga Suikoden. Un juego diseñado para ofrecer a los jugadores una versión moderna de la clásica experiencia de un JRPG. Prepárate para encarnar a más de 100 personajes jugables en un mundo desgajado por la guerra que solo tú puedes salvar."
+            />
+          </div>
+          <div class="divImagenesVendidas">
+            <img
+              class="img-juegos-mas-vendidos"
+              src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/2x1_NSwitch_PaperMarioTheThousandYearDoor_ES_es_image1600w.jpg"
+              alt="Juego"
+              data-description="Dobla a Mario en forma de avión para ayudarle a surcar los aires, o plánchalo al máximo para poder pasar por las más estrechas rendijas en tu viaje para rescatar a la pobre Princesa Peach. La acción se desarrolla en un vasto mundo donde tendrás que buscar los Cristales Estrellas y te encontrarás con antiguos amigos... y antiguos enemigos. Paper Mario: La Puerta Milenaria es una aventura RPG a cargo de Nintendo para GameCube y Switch."
+            />
+          </div>
+          <div class="divImagenesVendidas">
+            <img
+              class="img-juegos-mas-vendidos"
+              src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg"
+              alt="Juego"
+              data-description="Ponte en la piel de un estudiante transferido empujado a un destino inesperado al entrar en la hora oculta entre un día y el siguiente. Despierta un poder increíble y persigue los misterios de la Hora Oscura, lucha por tus amigos y deja una huella en sus recuerdos para siempre. Persona 3 Reload, un RPG a cargo de Atlus para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series, es una reinvención cautivadora del juego de rol que define el género, renacido para la era moderna."
+            />
+          </div>
+          <div class="divImagenesVendidas">
+            <img
+              class="img-juegos-mas-vendidos"
+              src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2313/63a2ec52c8fcc222915069ab60e7d19c14009616ecfb053d.jpg"
+              alt="Juego"
+              data-description="Adéntrate en un atractivo juego de plataformas repleto de acción y aventura. Viaja por la mitología persa y manipula los límites del espacio y el tiempo. Usa tus poderes del tiempo, habilidades de combate y movimientos para ejecutar combos letales y derrotar a criaturas mitológicas y enemigos corrompidos por el tiempo. Compra amuletos a los comerciantes y equípate con ellos para jugar a tu manera."
+            />
+          </div>
+        </div>
+        <div id="description-box"></div>
+      </section>
+
+      <section></section>
+      <!--Ofertas limitadas por tiempo-->
+
+      <section class="container mb-3 filtrarPorGenero">
+        <div class="container mt-5">
+          <h2>Catálogo de Juegos</h2>
+          <hr />
+          <div
+            class="d-flex justify-content-between align-items-center mb-4 formyFiltrado"
+          >
+            <form class="d-flex formBuscar" role="search" data-bs-theme="light">
+              <div class="input-group">
+                <input
+                  class="form-control inputBuscar"
+                  type="search"
+                  placeholder="buscar"
+                  aria-label="Search"
+                />
+                <button class="btn" type="button" id="botonLimpiar">X</button>
+                <button class="btn btn-outline-light" type="submit">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </form>
+            <div class="btn-group">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                id="categoryFilter"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-funnel"></i> Filtrar por categoría
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="categoryFilter">
+                <li><button class="dropdown-item" id="Todos">Todos</button></li>
+                <li>
+                  <button class="dropdown-item" id="Accion">Acción</button>
+                </li>
+                <li><button class="dropdown-item" id="RPG">RPG</button></li>
+                <li>
+                  <button class="dropdown-item" id="Puzzle">Puzzle</button>
+                </li>
+                <li>
+                  <button class="dropdown-item" id="BattleRoyale">
+                    Battle Royale
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" id="Carreras">Carreras</button>
+                </li>
+                <li>
+                  <button class="dropdown-item" id="Shooter">Shooter</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row" id="rellenarSection"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center text-white">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline align-items-center p-2 rojito"
+      >
+        <div class="d-flex">
+          <a href="./index.html">
+            <img
+              src="../images/NETHER-SHOP-12-8-2024.png"
+              id="logo-navbar"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-center">
+          <a
+            href="./pages/error404.html"
+            class="mt-2 me-md-3 a-footer text-white"
+            >Contactanos</a
+          >
+          <a href="./pages/error404.html" class="mt-2 a-footer text-white"
+            >Politicas de privacidad</a
+          >
+        </div>
+        <div class="mt-3 d-flex justify-content-center">
+          <div>
+            <a href="./pages/error404.html" class="a-footer text-white">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="./pages/error404.html" class="a-footer text-white mx-3">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="./pages/error404.html" class="a-footer text-white">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3 naranjita">
+        <p class="mb-0">
+          &copy; 2024 NetherShop. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js" type="module"></script>
+  </body>
 </html>

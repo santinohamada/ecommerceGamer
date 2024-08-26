@@ -44,7 +44,7 @@ export function colocarJuegos(categoria = "Todos") {
   } else {
     for (let i = 0; i < listaJuego.length; i++) {
       for (let j = 0; j < listaJuego[i].categoria.length; j++) {
-        if (((listaJuego[i].categoria[j]).replace(` `, '') === categoria)) {
+        if (listaJuego[i].categoria[j].replace(` `, "") === categoria) {
           cards += `<div class="col-12 col-md-4 col-lg-3 my-2">
             <div class="card cardJuegosCatalogo h-100 ">
             <div class="card-body">

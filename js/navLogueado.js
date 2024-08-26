@@ -23,10 +23,10 @@ function loginUser(mail, password) {
     );
     if (window.location.pathname === "/index.html") {
       updateNavIndex();
-      location.reload()
+      location.reload();
     } else {
       updateNavPages();
-      location.reload()
+      location.reload();
     }
   }
 }
@@ -181,7 +181,7 @@ export function updateNavPages() {
             </div>
           </div>
         </div>`;
-  } 
+  }
 }
 function recorrerUsuarios(mail, password) {
   for (let i = 0; i < listaUsuario.length; i++) {
@@ -208,9 +208,9 @@ function verificarAdminIndex(usuario) {
                     aria-current="page"
                     href="./pages/administracion.html"
                     >Administracion</a>`;
-                    return administracion;
+    return administracion;
   }
-  return ""
+  return "";
 }
 export function verificarAdminPages(usuario) {
   li.classList.add("nav-link");
@@ -222,7 +222,7 @@ export function verificarAdminPages(usuario) {
                     aria-current="page"
                     href="./administracion.html"
                     >Administracion</a>`;
-                    return administracion;
+    return administracion;
   }
-  return ""
+  return "";
 }

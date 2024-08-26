@@ -145,11 +145,11 @@ section.innerHTML = `
         ${(div.innerHTML = precioJuego(juegoSeleccionado))}
         </div>
         <div class="text-center my-3 d-flex flex-column">
-        <a href="#" class="btn celesteClarito p-2">Comprar ahora</a>
-        <a href="#" class="btn bg-body-tertiary my-3 p-2"
+        <a href="./error404.html" class="btn celesteClarito p-2">Comprar ahora</a>
+        <a href="./error404.html" class="btn bg-body-tertiary my-3 p-2"
         >Añadir al carrito</a
         >
-        <a href="#" class="btn bg-body-tertiary p-2">Añadir a la lista de deseos</a>
+        <a href="./error404.html" class="btn bg-body-tertiary p-2">Añadir a la lista de deseos</a>
         </div>
             </div>
             <div class="mt-3">

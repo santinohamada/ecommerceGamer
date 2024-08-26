@@ -21,7 +21,7 @@ export class Juego {
   #gpuR;
   #directxR;
   #almacenamientoR;
-  
+
   #opiniones;
 
   constructor(
@@ -74,8 +74,8 @@ export class Juego {
   get id() {
     return this.#id;
   }
-  get foto (){
-    return this.#foto
+  get foto() {
+    return this.#foto;
   }
   get nombre() {
     return this.#nombre;
@@ -98,51 +98,51 @@ export class Juego {
   get versionM() {
     return this.#versionM;
   }
-  
+
   get cpuM() {
     return this.#cpuM;
   }
-  
+
   get memoriaM() {
     return this.#memoriaM;
   }
-  
+
   get gpuM() {
     return this.#gpuM;
   }
-  
+
   get directxM() {
     return this.#directxM;
   }
-  
+
   get almacenamientoM() {
     return this.#almacenamientoM;
   }
-  
+
   get versionR() {
     return this.#versionR;
   }
-  
+
   get cpuR() {
     return this.#cpuR;
   }
-  
+
   get memoriaR() {
     return this.#memoriaR;
   }
-  
+
   get gpuR() {
     return this.#gpuR;
   }
-  
+
   get directxR() {
     return this.#directxR;
   }
-  
+
   get almacenamientoR() {
     return this.#almacenamientoR;
   }
-  
+
   get opiniones() {
     return this.#opiniones;
   }
@@ -150,7 +150,7 @@ export class Juego {
   set id(value) {
     this.#id = value;
   }
-  set foto(value){
+  set foto(value) {
     this.#foto = value;
   }
   set nombre(value) {
@@ -174,51 +174,51 @@ export class Juego {
   set versionM(value) {
     this.#versionM = value;
   }
-  
+
   set cpuM(value) {
     this.#cpuM = value;
   }
-  
+
   set memoriaM(value) {
     this.#memoriaM = value;
   }
-  
+
   set gpuM(value) {
     this.#gpuM = value;
   }
-  
+
   set directxM(value) {
     this.#directxM = value;
   }
-  
+
   set almacenamientoM(value) {
     this.#almacenamientoM = value;
   }
-  
+
   set versionR(value) {
     this.#versionR = value;
   }
-  
+
   set cpuR(value) {
     this.#cpuR = value;
   }
-  
+
   set memoriaR(value) {
     this.#memoriaR = value;
   }
-  
+
   set gpuR(value) {
     this.#gpuR = value;
   }
-  
+
   set directxR(value) {
     this.#directxR = value;
   }
-  
+
   set almacenamientoR(value) {
     this.#almacenamientoR = value;
   }
-  
+
   set opiniones(value) {
     this.#opiniones = value;
   }
@@ -254,7 +254,6 @@ export class Juego {
 export function crearJuegos() {
   const listaJuego = JSON.parse(localStorage.getItem("juegosKey")) || [];
   if (listaJuego.length == 0) {
-
     const listaJuego = [
       new Juego(
         undefined,
@@ -263,7 +262,7 @@ export function crearJuegos() {
         29.99,
         10,
         "Remasterización del clásico juego de carreras de alta velocidad con impresionantes gráficos mejorados.",
-        ["Carreras","Accion"],
+        ["Carreras", "Accion"],
         "Criterion Games",
         "Windows 10",
         "Intel Core i3-6100",
@@ -276,7 +275,7 @@ export function crearJuegos() {
         "16 GB RAM",
         "NVIDIA GeForce GTX 1060",
         "DirectX 11",
-        "45 GB",
+        "45 GB"
       ),
       new Juego(
         undefined,
@@ -285,7 +284,7 @@ export function crearJuegos() {
         39.99,
         20,
         "Un juego de rol épico en un mundo abierto lleno de monstruos, magia y decisiones morales.",
-        ["RPG","Accion"],
+        ["RPG", "Accion"],
         "CD Projekt Red",
         "Windows 7",
         "Intel Core i5-2500K",
@@ -307,7 +306,7 @@ export function crearJuegos() {
         59.99,
         15,
         "Un juego de acción y aventura que sigue la historia de un forajido en el Salvaje Oeste.",
-        ["Accion","Aventura"],
+        ["Accion", "Aventura"],
         "Rockstar Games",
         "Windows 10",
         "Intel Core i5-2500K",
@@ -329,7 +328,7 @@ export function crearJuegos() {
         49.99,
         30,
         "Un RPG de mundo abierto ambientado en un futuro distópico lleno de tecnología avanzada.",
-        ["Accion","RPG"],
+        ["Accion", "RPG"],
         "CD Projekt Red",
         "Windows 10",
         "Intel Core i5-3570K",
@@ -351,7 +350,7 @@ export function crearJuegos() {
         59.99,
         25,
         "El octavo capítulo de la serie Resident Evil, donde el terror acecha en cada rincón de un misterioso pueblo.",
-        ["Terror","Accion"],
+        ["Terror", "Accion"],
         "Capcom",
         "Windows 10",
         "Intel Core i5-7500",
@@ -373,7 +372,7 @@ export function crearJuegos() {
         69.99,
         10,
         "La última entrega de la popular franquicia de fútbol, con gráficos mejorados y nuevas características.",
-        ["Deportes","Simulación"],
+        ["Deportes", "Simulación"],
         "EA Sports",
         "Windows 10",
         "Intel Core i3-6100",
@@ -395,7 +394,7 @@ export function crearJuegos() {
         50,
         0,
         "Un shooter táctico en primera persona que combina habilidades únicas y trabajo en equipo.",
-        ["FPS","Shooter"],
+        ["FPS", "Shooter"],
         "Riot Games",
         "Windows 7",
         "Intel Core i3-370M",
@@ -417,7 +416,7 @@ export function crearJuegos() {
         70,
         0,
         "Un battle royale que combina construcción y combate en una isla llena de peligros y sorpresas.",
-        ["Battle Royale","Accion"],
+        ["Battle Royale", "Accion"],
         "Epic Games",
         "Windows 7",
         "Intel Core i3-3225",
@@ -439,7 +438,7 @@ export function crearJuegos() {
         19.99,
         0,
         "La secuela del legendario shooter táctico, con nuevas mecánicas y gráficos actualizados.",
-        ["FPS","Shooter"],
+        ["FPS", "Shooter"],
         "Valve",
         "Windows 10",
         "Intel Core i5-2500K",
@@ -461,7 +460,7 @@ export function crearJuegos() {
         39.99,
         20,
         "Una experiencia de Tetris inmersiva que combina la jugabilidad clásica con efectos visuales y sonoros impresionantes.",
-        ["Puzzle","Música"],
+        ["Puzzle", "Música"],
         "Monstars Inc.",
         "Windows 10",
         "Intel Core i3-4340",
@@ -483,7 +482,7 @@ export function crearJuegos() {
         29.99,
         50,
         "El juego que definió el género battle royale, con combate intenso en un mapa de gran escala.",
-        ["Battle Royale","Accion"],
+        ["Battle Royale", "Accion"],
         "PUBG Corporation",
         "Windows 7",
         "Intel Core i5-4430",
@@ -497,11 +496,10 @@ export function crearJuegos() {
         "NVIDIA GeForce GTX 1060",
         "DirectX 12",
         "30 GB"
-      )
+      ),
     ];
 
     localStorage.setItem("juegosKey", JSON.stringify(listaJuego));
   }
   return listaJuego;
 }
-

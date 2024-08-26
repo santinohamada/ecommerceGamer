@@ -11,7 +11,7 @@ export class Usuario {
   #tipo;
   #mail;
 
-  constructor(id, nombre, apellido,mail, password, nombreUsuario, foto, tipo) {
+  constructor(id, nombre, apellido, mail, password, nombreUsuario, foto, tipo) {
     this.#id = uid();
     this.mail = mail;
     this.#password = password;
@@ -88,7 +88,7 @@ export class Usuario {
   }
 }
 export function crearUsuarios() {
-  const listaUsuario=[]
+  const listaUsuario = [];
   if (listaUsuario.length == 0) {
     const usuario = new Usuario(
       undefined,
@@ -112,7 +112,10 @@ export function crearUsuarios() {
     );
     listaUsuario.push(usuario);
     listaUsuario.push(usuario2);
-    localStorage.setItem("usuariosKey", JSON.stringify(([usuario.nombreUsuario,usuario2.nombreUsuario])));
+    localStorage.setItem(
+      "usuariosKey",
+      JSON.stringify([usuario.nombreUsuario, usuario2.nombreUsuario])
+    );
   }
   return listaUsuario;
 }
